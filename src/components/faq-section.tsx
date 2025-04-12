@@ -47,8 +47,8 @@ export default function FaqAccordion() {
       answer: (
         <div className="space-y-4 text-gray-300">
           <p>
-            VIBBA is not binaural beats. There are some similarities, but it's important to remember that binaural beats
-            were first discovered in 1839, popularized in the 1970's and haven't really changed since.
+            VIBBA is not binaural beats. There are some similarities, but it&apos;s important to remember that binaural beats
+            were first discovered in 1839, popularized in the 1970&apos;s and haven&apos;t really changed since.
           </p>
           <p>
             In a way, you could think of VIBBA as binaural beats 2.0. We took the concept behind binaural beats and
@@ -134,14 +134,14 @@ export default function FaqAccordion() {
           <ul className="list-disc pl-6 space-y-2">
             <li>Regular music often contains lyrics, which compete for your verbal processing resources</li>
             <li>Music typically has dynamic changes in tempo, volume, and emotional tone that can be distracting</li>
-            <li>VIBBA uses precise frequencies and patterns that work with your brain's natural rhythms</li>
+            <li>VIBBA uses precise frequencies and patterns that work with your brain&apos;s natural rhythms</li>
             <li>Our audio maintains consistent properties that create an optimal environment for sustained focus</li>
             <li>
               Regular music is designed to engage your emotions; VIBBA is designed to optimize your cognitive state
             </li>
           </ul>
           <p>
-            While some instrumental music can be helpful for focus, it's not specifically designed for cognitive
+            While some instrumental music can be helpful for focus, it&apos;s not specifically designed for cognitive
             enhancement the way VIBBA is.
           </p>
         </div>
@@ -161,7 +161,7 @@ export default function FaqAccordion() {
             <li>Experiment with different volume levels to find what works best for you</li>
           </ul>
           <p>
-            Everyone's brain is unique, so don't be afraid to experiment with different session types and settings to
+            Everyone&apos;s brain is unique, so don&apos;t be afraid to experiment with different session types and settings to
             find your optimal configuration.
           </p>
         </div>
@@ -170,7 +170,7 @@ export default function FaqAccordion() {
   ]
 
   return (
-    <div className="w-full max-w-3xl mx-auto">
+    <div className="w-full max-w-3xl mx-auto py-20 px-4 relative">
       {faqs.map((faq, index) => (
         <div key={index} className="border-b border-gray-800">
           <button

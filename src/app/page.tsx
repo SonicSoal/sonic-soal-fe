@@ -1,6 +1,7 @@
 import { AudioPlayer } from "@/components/audio-player"
 import { CTA } from "@/components/cta"
 import { EarnVibba } from "@/components/earn-vibba"
+import FaqAccordion from "@/components/faq-section"
 import { Footer } from "@/components/footer"
 import { Header } from "@/components/header"
 import { Hero } from "@/components/hero"
@@ -26,6 +27,7 @@ export default function Home() {
           <HowItWorks />
           <EarnVibba />
           <CTA />
+          <FaqAccordion/>
         </main>
         <Footer />
       </div>

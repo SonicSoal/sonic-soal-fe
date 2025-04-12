@@ -9,7 +9,7 @@ export function CTA() {
       <div className="absolute inset-0 bg-gradient-to-b from-background/95 to-background z-0"></div>
 
       <div className="container mx-auto max-w-4xl relative z-10">
-        <div className="bg-gradient-to-br from-primary/10 to-secondary/10 backdrop-blur-sm rounded-2xl p-8 md:p-12 border border-primary/20 relative overflow-hidden shadow-lg">
+        <div className="bg-gradient-to-br from-primary/10 to-secondary/10 backdrop-blur-lg rounded-2xl p-8 md:p-12 border border-primary/20 relative overflow-hidden shadow-lg">
           {/* Background Elements */}
           <div className="absolute top-0 right-0 w-64 h-64 bg-gradient-to-br from-primary/10 to-secondary/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2"></div>
           <div className="absolute bottom-0 left-0 w-64 h-64 bg-gradient-to-tl from-primary/10 to-secondary/10 rounded-full blur-3xl translate-y-1/2 -translate-x-1/2"></div>
