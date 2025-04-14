@@ -3,54 +3,93 @@
 import type React from "react"
 
 import { useState, useRef, useEffect, useMemo, useCallback } from "react"
-import { Play, Pause, SkipBack, SkipForward, Volume2, VolumeX, Music2 } from "lucide-react"
+import {
+  Play,
+  Pause,
+  SkipBack,
+  SkipForward,
+  Volume2,
+  VolumeX,
+  Music2,
+} from "lucide-react"
 import { motion, AnimatePresence } from "framer-motion"
 import { Slider } from "@/components/ui/slider"
 import { cn } from "@/lib/utils"
 import { useMediaQuery } from "@/hooks/use-media-query"
 
+// Replace the audioTracks array with this enhanced version that includes metadata
 const audioTracks = [
   {
     id: 1,
-    title: "Script Your Reality",
-    description: "8-12 Hz | TPO-enhanced with SonicSoal tuning",
-    duration: 164,
-    url: "/audio/script-your-reality.mp3",
+    title: "Clean Slate",
+    artist: "SonicSoal",
+    album: "SonicSoal: Manifestation",
+    genre: "Ambient / Subliminal",
+    comments: "TPO enhanced with advanced subliminal layering.",
+    moodTags: ["manifestation", "creativity", "transformation"],
+    category: "Manifestation",
+    description: "Crafted to shift your inner current. Subliminally aligned to elevate your state.",
+    url: "/audio/Clean_Slate.mp3",
   },
   {
     id: 2,
-    title: "That Vibe Soundroll",
-    description: "4-8 Hz | TPO-enhanced with SonicSoal tuning",
-    duration: 144,
-    url: "/audio/that-vibe-soundroll-main-version-1677-02-24.mp3",
+    title: "Cleanse My Shadows",
+    artist: "SonicSoal",
+    album: "SonicSoal: Peace",
+    genre: "Ambient / Subliminal",
+    comments: "TPO enhanced with advanced subliminal layering.",
+    moodTags: ["peace", "calm", "balance"],
+    category: "Peace",
+    description: "Harmonizes your internal landscape. Designed to create profound stillness within.",
+    url: "/audio/Cleanse_My_Shadows.mp3",
   },
   {
     id: 3,
-    title: "The Cleaner Night Drift",
-    description: "0.5-4 Hz | TPO-enhanced with SonicSoal tuning",
-    duration: 121,
-    url: "/audio/the-cleaner-night-drift-main-version-20732-02-01.mp3",
+    title: "Cry Rise Repeat",
+    artist: "SonicSoal",
+    album: "SonicSoal: Sleep",
+    genre: "Ambient / Subliminal",
+    comments: "TPO enhanced with advanced subliminal layering.",
+    moodTags: ["sleep", "restoration", "healing"],
+    category: "Sleep",
+    description: "Guides you into the depths of restorative rest. Subliminally calibrated for renewal.",
+    url: "/audio/Cry_Rise_Repeat.mp3",
   },
   {
     id: 4,
-    title: "Vivre Prigida",
-    description: "30-100 Hz | TPO-enhanced with SonicSoal tuning",
-    duration: 133,
-    url: "/audio/vivre-prigida-main-version-02-13-19119.mp3",
+    title: "Float Night Drift",
+    artist: "Original Artist",
+    album: "SonicSoal: Confidence",
+    genre: "Ambient / Subliminal",
+    comments: "TPO enhanced with advanced subliminal layering.",
+    moodTags: ["confidence", "motivation", "clarity"],
+    category: "Confidence",
+    description: "Awakens your inner potential. Subliminally crafted to amplify self-assurance.",
+    url: "/audio/Float_Night_Drift.mp3",
   },
   {
     id: 5,
-    title: "Win Jeff Kaale",
-    description: "7.83 Hz | TPO-enhanced with SonicSoal tuning",
-    duration: 180,
-    url: "/audio/win-jeff-kaale-main-version-27222-03-00.mp3",
+    title: "Gratitude Rejuvenation TPO Remix",
+    artist: "SonicSoal",
+    album: "SonicSoal: Energy",
+    genre: "Ambient / Subliminal",
+    comments: "TPO enhanced with advanced subliminal layering.",
+    moodTags: ["energy", "vitality", "focus"],
+    category: "Energy",
+    description: "Ignites your vital force. Subliminally designed to energize your entire being.",
+    url: "/audio/Gratitude_Rejuvenation_TPO_Remix.mp3",
   },
   {
     id: 6,
-    title: "Zen Garden Danijel Zambo",
-    description: "13-30 Hz | TPO-enhanced with SonicSoal tuning",
-    duration: 120,
-    url: "/audio/zen-garden-danijel-zambo-main-version-1397-02-00.mp3",
+    title: "Grind Magnetism",
+    artist: "SonicSoal",
+    album: "SonicSoal: Focus",
+    genre: "Ambient / Subliminal",
+    comments: "TPO enhanced with advanced subliminal layering.",
+    moodTags: ["focus", "clarity", "productivity"],
+    category: "Focus",
+    description: "Sharpens your mental landscape. Subliminally tuned to enhance cognitive clarity.",
+    url: "/audio/Grind_Magnetism.mp3",
   },
 ]
 
@@ -90,6 +129,7 @@ export function AudioPlayer() {
   const [loaderKey, setLoaderKey] = useState(0)
   const [audioData, setAudioData] = useState<number[]>([])
   const [showVolumeSlider, setShowVolumeSlider] = useState(false)
+  const [showMetadata, setShowMetadata] = useState(false)
 
   const isMobile = useMediaQuery("(max-width: 640px)")
 
@@ -100,7 +140,7 @@ export function AudioPlayer() {
   // Set client flag and initial duration whenever track changes
   useEffect(() => {
     setIsClient(true)
-    setDuration(audioTracks[currentTrack].duration)
+    // Don't set duration here, it will be set when audio loads
 
     // Generate random audio data for visualization
     generateAudioData()
@@ -373,7 +413,7 @@ export function AudioPlayer() {
             : "bg-card/50 border border-border hover:border-primary/30 dark:bg-card/20",
         )}
       >
-        <div className="flex items-center gap-3">
+        <div className="flex items-center gap-5">
           <div
             className={cn(
               "w-10 h-10 rounded-full flex items-center justify-center",
@@ -389,8 +429,20 @@ export function AudioPlayer() {
               {track.title}
             </h4>
             <p className="text-sm text-muted-foreground truncate">{track.description}</p>
+            <div className="flex flex-wrap gap-1 mt-1">
+              <span className="inline-flex items-center px-2 py-0.5 rounded text-xs font-medium bg-primary/10 text-primary">
+                {track.category}
+              </span>
+              {track.moodTags.slice(0, 2).map((tag) => (
+                <span
+                  key={tag}
+                  className="inline-flex items-center px-2 py-0.5 rounded text-xs font-medium bg-muted/50 text-muted-foreground"
+                >
+                  {tag}
+                </span>
+              ))}
+            </div>
           </div>
-          <div className="text-xs text-muted-foreground shrink-0">{formatTime(track.duration)}</div>
         </div>
       </motion.div>
     ))
@@ -420,7 +472,17 @@ export function AudioPlayer() {
   return (
     <section id="samples" className="py-20 px-4 relative">
       {/* Hidden audio element */}
-      <audio ref={audioRef} src={audioTracks[currentTrack].url} onEnded={() => setIsPlaying(false)} hidden />
+      <audio
+        ref={audioRef}
+        src={audioTracks[currentTrack].url}
+        onEnded={() => setIsPlaying(false)}
+        onLoadedMetadata={(e) => {
+          if (e.currentTarget.duration) {
+            setDuration(e.currentTarget.duration)
+          }
+        }}
+        hidden
+      />
 
       <div className="absolute inset-0 bg-gradient-to-b from-background via-background/5 to-background z-0"></div>
       <div className="absolute inset-0 z-0">
@@ -633,6 +695,65 @@ export function AudioPlayer() {
               </motion.div>
             </motion.div>
           </div>
+          {/* Metadata Toggle Button */}
+          <motion.div variants={itemVariants} className="mt-2 flex justify-center">
+            <button
+              onClick={() => setShowMetadata(!showMetadata)}
+              className="flex items-center gap-1 text-xs text-muted-foreground hover:text-primary transition-colors cursor-pointer"
+            >
+              What’s Behind the Sound?
+            </button>
+          </motion.div>
+
+          {/* Metadata Section */}
+          <AnimatePresence>
+            {showMetadata && (
+              <motion.div
+                initial={{ height: 0, opacity: 0 }}
+                animate={{ height: "auto", opacity: 1 }}
+                exit={{ height: 0, opacity: 0 }}
+                transition={{ duration: 0.2 }}
+                className="overflow-hidden"
+              >
+                <div className="mt-4 pt-4 border-t border-border/50 grid grid-cols-2 gap-2 text-sm">
+                  <div>
+                    <p className="text-muted-foreground">Title:</p>
+                    <p className="font-medium">{audioTracks[currentTrack].title}</p>
+                  </div>
+                  <div>
+                    <p className="text-muted-foreground">Artist:</p>
+                    <p className="font-medium">{audioTracks[currentTrack].artist}</p>
+                  </div>
+                  <div>
+                    <p className="text-muted-foreground">Album:</p>
+                    <p className="font-medium">{audioTracks[currentTrack].album}</p>
+                  </div>
+                  <div>
+                    <p className="text-muted-foreground">Genre:</p>
+                    <p className="font-medium">{audioTracks[currentTrack].genre}</p>
+                  </div>
+                  <div className="col-span-2">
+                    <p className="text-muted-foreground">Comments:</p>
+                    <p className="font-medium">{audioTracks[currentTrack].comments}</p>
+                  </div>
+                  <div className="col-span-2">
+                    <p className="text-muted-foreground">Mood Tags:</p>
+                    <div className="flex flex-wrap gap-1 mt-1">
+                      {audioTracks[currentTrack].moodTags.map((tag) => (
+                        <span
+                          key={tag}
+                          className="inline-flex items-center px-2 py-0.5 rounded text-xs font-medium bg-primary/10 text-primary"
+                        >
+                          {tag}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              </motion.div>
+            )}
+          </AnimatePresence>
+
         </motion.div>
 
         {/* Track List */}
