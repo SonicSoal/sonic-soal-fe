@@ -2,7 +2,7 @@
 
 import type React from "react"
 
-import { useState, useRef, useEffect, useMemo } from "react"
+import { useState, useRef, useEffect, useMemo, useCallback } from "react"
 import { Play, Pause, SkipBack, SkipForward, Volume2, VolumeX, Music2 } from "lucide-react"
 import { motion, AnimatePresence } from "framer-motion"
 import { Slider } from "@/components/ui/slider"
@@ -13,42 +13,42 @@ const audioTracks = [
   {
     id: 1,
     title: "Script Your Reality",
-    description: "8-12 Hz | Enhance concentration",
+    description: "8-12 Hz | TPO-enhanced with SonicSoal tuning",
     duration: 164,
     url: "/audio/script-your-reality.mp3",
   },
   {
     id: 2,
     title: "That Vibe Soundroll",
-    description: "4-8 Hz | Inner peace",
+    description: "4-8 Hz | TPO-enhanced with SonicSoal tuning",
     duration: 144,
     url: "/audio/that-vibe-soundroll-main-version-1677-02-24.mp3",
   },
   {
     id: 3,
     title: "The Cleaner Night Drift",
-    description: "0.5-4 Hz | Restorative sleep",
+    description: "0.5-4 Hz | TPO-enhanced with SonicSoal tuning",
     duration: 121,
     url: "/audio/the-cleaner-night-drift-main-version-20732-02-01.mp3",
   },
   {
     id: 4,
     title: "Vivre Prigida",
-    description: "30-100 Hz | Creative inspiration",
+    description: "30-100 Hz | TPO-enhanced with SonicSoal tuning",
     duration: 133,
     url: "/audio/vivre-prigida-main-version-02-13-19119.mp3",
   },
   {
     id: 5,
     title: "Win Jeff Kaale",
-    description: "7.83 Hz | Schumann resonance",
+    description: "7.83 Hz | TPO-enhanced with SonicSoal tuning",
     duration: 180,
     url: "/audio/win-jeff-kaale-main-version-27222-03-00.mp3",
   },
   {
     id: 6,
     title: "Zen Garden Danijel Zambo",
-    description: "13-30 Hz | Mental alertness",
+    description: "13-30 Hz | TPO-enhanced with SonicSoal tuning",
     duration: 120,
     url: "/audio/zen-garden-danijel-zambo-main-version-1397-02-00.mp3",
   },
@@ -284,22 +284,35 @@ export function AudioPlayer() {
     setIsPlaying(!isPlaying)
   }
 
-  const handleTrackChange = (index: number) => {
-    setCurrentTrack(index)
-    setIsPlaying(false)
-    setCurrentTime(0)
-    if (!isClient) return
-    setTimeout(() => {
-      if (audioRef.current) {
-        audioRef.current.currentTime = 0
-        audioRef.current.play().catch((e) => console.log("Playback prevented. Interaction required first:", e))
-        setIsPlaying(true)
-      }
-    }, 100)
-  }
+  const handleTrackChange = useCallback(
+    (index: number) => {
+      setCurrentTrack(index)
+      setIsPlaying(false)
+      setCurrentTime(0)
+      if (!isClient) return
+      setTimeout(() => {
+        if (audioRef.current) {
+          audioRef.current.currentTime = 0
+          audioRef.current.play().catch((e) => console.log("Playback prevented. Interaction required first:", e))
+          setIsPlaying(true)
+        }
+      }, 100)
+    },
+    [isClient],
+  )
+  // Handle next and previous track
 
   const handleNext = () => {
-    handleTrackChange((currentTrack + 1) % audioTracks.length)
+    // Only change track if not at the end of the playlist
+    if (currentTrack < audioTracks.length - 1) {
+      handleTrackChange(currentTrack + 1)
+    } else {
+      // If at the end, just stop playing
+      setIsPlaying(false)
+      if (audioRef.current) {
+        audioRef.current.pause()
+      }
+    }
   }
 
   const handlePrev = () => {
@@ -407,7 +420,7 @@ export function AudioPlayer() {
   return (
     <section id="samples" className="py-20 px-4 relative">
       {/* Hidden audio element */}
-      <audio ref={audioRef} src={audioTracks[currentTrack].url} onEnded={handleNext} hidden />
+      <audio ref={audioRef} src={audioTracks[currentTrack].url} onEnded={() => setIsPlaying(false)} hidden />
 
       <div className="absolute inset-0 bg-gradient-to-b from-background via-background/5 to-background z-0"></div>
       <div className="absolute inset-0 z-0">
@@ -422,7 +435,7 @@ export function AudioPlayer() {
           transition={{ duration: 0.3 }}
           className="text-3xl md:text-4xl font-bold mb-2 text-center text-foreground"
         >
-          Experience SonicSoal Sessions
+          Experience TPO-Enhanced SonicSoal Sessions
         </motion.h2>
         <motion.p
           initial={{ opacity: 0 }}
@@ -430,8 +443,8 @@ export function AudioPlayer() {
           transition={{ duration: 0.3, delay: 0.1 }}
           className="text-muted-foreground text-center mb-12 max-w-2xl mx-auto"
         >
-          Listen to sample sessions and discover how our frequency-optimized audio can transform your state of mind and
-          connect you to deeper levels of consciousness.
+          Listen to sample sessions featuring our TPO-enhanced audio with SonicSoal subliminal tuning, designed to
+          transform your state of mind and connect you to deeper levels of consciousness.
         </motion.p>
 
         {/* Player Card */}
@@ -538,7 +551,11 @@ export function AudioPlayer() {
                 className="bg-black text-white w-12 h-12 sm:w-14 sm:h-14 rounded-full flex items-center justify-center bg-primary transition-colors shadow-sm "
                 aria-label={isPlaying ? "Pause" : "Play"}
               >
-                {isPlaying ? <Pause className="text-background" size={isMobile ? 20 : 24} /> : <Play size={isMobile ? 20 : 24} className="ml-1 text-background" />}
+                {isPlaying ? (
+                  <Pause className="text-background" size={isMobile ? 20 : 24} />
+                ) : (
+                  <Play size={isMobile ? 20 : 24} className="ml-1 text-background" />
+                )}
               </motion.button>
               <motion.button
                 variants={buttonVariants}
