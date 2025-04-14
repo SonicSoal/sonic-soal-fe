@@ -1,6 +1,6 @@
-import { Trophy, Star, Clock, Sparkles } from "lucide-react"
+import { Trophy, Star, Clock, Sparkles } from 'lucide-react';
 
-export function EarnVibba() {
+export function EarnSoal() {
   return (
     <section id="earn" className="py-20 px-4 relative">
       {/* Background gradient */}
@@ -41,61 +41,82 @@ export function EarnVibba() {
 
           {/* Content */}
           <div className="order-1 md:order-2">
-            <h2 className="text-3xl md:text-4xl font-bold mb-6 text-foreground">Earn SonicSoul Points</h2>
+            <h2 className="text-3xl md:text-4xl font-bold mb-6 text-foreground">
+              Earn SonicSoal Points
+            </h2>
             <p className="text-muted-foreground mb-8">
-              Enhance your journey by earning SonicSoul points as you progress through your frequency alignment
-              practice. Use points to unlock premium sessions, exclusive content, and special features designed to
-              deepen your sonic experience.
+              Enhance your journey by earning SonicSoal points as you progress
+              through your frequency alignment practice. Use points to unlock
+              premium sessions, exclusive content, and special features designed
+              to deepen your sonic experience.
             </p>
 
             <div className="space-y-6">
               <div className="flex gap-4 group">
+                <div>
                 <div className="bg-gradient-to-br from-primary/20 to-primary/5 p-3 rounded-full shadow-sm group-hover:shadow-md transition-shadow">
                   <Clock className="h-5 w-5 text-primary" />
                 </div>
+                </div>
                 <div>
-                  <h3 className="font-bold text-lg mb-1 text-foreground">Consistent Practice</h3>
+                  <h3 className="font-bold text-lg mb-1 text-foreground">
+                    Consistent Practice
+                  </h3>
                   <p className="text-muted-foreground">
-                    Earn points for each completed session and build streaks for bonus rewards and deeper sonic
-                    experiences.
+                    Earn points for each completed session and build streaks for
+                    bonus rewards and deeper sonic experiences.
                   </p>
                 </div>
               </div>
 
               <div className="flex gap-4 group">
-                <div className="bg-gradient-to-br from-primary/20 to-primary/5 p-3 rounded-full shadow-sm group-hover:shadow-md transition-shadow">
-                  <Trophy className="h-5 w-5 text-primary" />
+                <div>
+                  <div className="bg-gradient-to-br from-primary/20 to-primary/5 p-3 rounded-full shadow-sm group-hover:shadow-md transition-shadow">
+                    <Trophy className="h-5 w-5 text-primary" />
+                  </div>
                 </div>
                 <div>
-                  <h3 className="font-bold text-lg mb-1 text-foreground">Achieve Goals</h3>
+                  <h3 className="font-bold text-lg mb-1 text-foreground">
+                    Achieve Goals
+                  </h3>
                   <p className="text-muted-foreground">
-                    Complete challenges and reach milestones to earn special point bonuses and unlock advanced
-                    frequencies.
+                    Complete challenges and reach milestones to earn special
+                    point bonuses and unlock advanced frequencies.
                   </p>
                 </div>
               </div>
 
               <div className="flex gap-4 group">
-                <div className="bg-gradient-to-br from-primary/20 to-primary/5 p-3 rounded-full shadow-sm group-hover:shadow-md transition-shadow">
-                  <Star className="h-5 w-5 text-primary" />
+                <div>
+                  <div className="bg-gradient-to-br from-primary/20 to-primary/5 p-3 rounded-full shadow-sm group-hover:shadow-md transition-shadow">
+                    <Star className="h-5 w-5 text-primary" />
+                  </div>
                 </div>
                 <div>
-                  <h3 className="font-bold text-lg mb-1 text-foreground">Share & Refer</h3>
+                  <h3 className="font-bold text-lg mb-1 text-foreground">
+                    Share & Refer
+                  </h3>
                   <p className="text-muted-foreground">
-                    Invite friends to join the SonicSoul community and earn points when they start their journey.
+                    Invite friends to join the SonicSoal community and earn
+                    points when they start their journey.
                   </p>
                 </div>
               </div>
 
               <div className="flex gap-4 group">
-                <div className="bg-gradient-to-br from-primary/20 to-primary/5 p-3 rounded-full shadow-sm group-hover:shadow-md transition-shadow">
-                  <Sparkles className="h-5 w-5 text-primary" />
+                <div>
+                  <div className="bg-gradient-to-br from-primary/20 to-primary/5 p-3 rounded-full shadow-sm group-hover:shadow-md transition-shadow">
+                    <Sparkles className="h-5 w-5 text-primary" />
+                  </div>
                 </div>
                 <div>
-                  <h3 className="font-bold text-lg mb-1 text-foreground">Unlock Premium</h3>
+                  <h3 className="font-bold text-lg mb-1 text-foreground">
+                    Unlock Premium
+                  </h3>
                   <p className="text-muted-foreground">
-                    Use your earned points to access exclusive premium content, advanced frequency patterns, and
-                    personalized sonic journeys.
+                    Use your earned points to access exclusive premium content,
+                    advanced frequency patterns, and personalized sonic
+                    journeys.
                   </p>
                 </div>
               </div>
@@ -104,5 +125,5 @@ export function EarnVibba() {
         </div>
       </div>
     </section>
-  )
+  );
 }

@@ -5,6 +5,7 @@ import Link from "next/link"
 import { Menu, X } from "lucide-react"
 
 import { Button } from "@/components/ui/button"
+import { ThemeToggle } from "@/components/theme-toggle"
 
 export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -17,7 +18,7 @@ export function Header() {
             S
           </div>
           <span className="ml-2 text-xl font-bold bg-gradient-to-r from-[#14D9C4] to-[#A46EFF] text-transparent bg-clip-text">
-            SonicSoul
+            SonicSoal
           </span>
         </Link>
 
@@ -30,8 +31,9 @@ export function Header() {
             Samples
           </Link>
           <Link href="#earn" className="text-muted-foreground hover:text-primary transition-colors">
-            Earn VIBBA
+            Earn $SOAL
           </Link>
+          <ThemeToggle />
           <Button
             variant="outline"
             className="border-primary text-primary hover:bg-primary/10 hover:border-primary transition-all duration-300 relative overflow-hidden group"
@@ -47,6 +49,7 @@ export function Header() {
 
         {/* Mobile Menu Button */}
         <div className="flex items-center gap-2 md:hidden">
+          <ThemeToggle />
           <button className="text-foreground" onClick={() => setIsMenuOpen(!isMenuOpen)}>
             {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
@@ -76,7 +79,7 @@ export function Header() {
               className="text-muted-foreground hover:text-primary transition-colors py-2"
               onClick={() => setIsMenuOpen(false)}
             >
-              Earn VIBBA
+              Earn $SOAL
             </Link>
             <Button
               variant="outline"

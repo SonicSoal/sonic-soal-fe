@@ -1,6 +1,6 @@
 import { AudioPlayer } from "@/components/audio-player"
 import { CTA } from "@/components/cta"
-import { EarnVibba } from "@/components/earn-vibba"
+import { EarnSoal } from "@/components/earn-soal"
 import FaqAccordion from "@/components/faq-section"
 import { Footer } from "@/components/footer"
 import { Header } from "@/components/header"
@@ -25,7 +25,7 @@ export default function Home() {
           <AudioPlayer />
           <VideoShowcase />
           <HowItWorks />
-          <EarnVibba />
+          <EarnSoal />
           <CTA />
           <FaqAccordion/>
         </main>

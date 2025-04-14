@@ -19,7 +19,7 @@ export function Hero() {
           </div>
         </div>
         <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 bg-gradient-to-r from-[#14D9C4] to-[#A46EFF] text-transparent bg-clip-text">
-          SonicSoul:
+          SonicSoal:
           Frequency for Your Soul
         </h1>
         <p className="text-muted-foreground text-xl md:text-2xl max-w-3xl mx-auto mb-10">

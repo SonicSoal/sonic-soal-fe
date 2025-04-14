@@ -92,8 +92,10 @@ export function AudioPlayer() {
   const [showVolumeSlider, setShowVolumeSlider] = useState(false)
 
   const isMobile = useMediaQuery("(max-width: 640px)")
+  const isTablet = useMediaQuery("(max-width: 1024px)")
 
   const audioRef = useRef<HTMLAudioElement | null>(null)
+  const waveformRef = useRef<HTMLDivElement | null>(null)
   const canvasRef = useRef<HTMLCanvasElement | null>(null)
   const animationRef = useRef<number | null>(null)
 
@@ -381,7 +383,7 @@ export function AudioPlayer() {
         </div>
       </motion.div>
     ))
-  }, [currentTrack, handleTrackChange, isPlaying])
+  }, [currentTrack, isPlaying])
 
   if (!isClient) {
     return (
@@ -511,116 +513,111 @@ export function AudioPlayer() {
             />
           </motion.div>
 
-          {/* Player Controls - Two-row layout */}
-          <div className="relative">
-            {/* Perfectly centered main controls */}
-            <motion.div
-              variants={itemVariants}
-              className="flex items-center justify-center gap-8 sm:gap-12 mb-4 sm:mb-6"
-            >
-              <motion.button
-                variants={buttonVariants}
-                initial="initial"
-                whileHover="hover"
-                whileTap="tap"
-                onClick={handlePrev}
-                className="text-foreground hover:text-primary transition-colors"
-                aria-label="Previous track"
+          {/* Player Controls */}
+          <motion.div variants={itemVariants} className="flex items-center justify-center mb-4 sm:mb-6 gap-4 sm:gap-8">
+            {/* Volume Control with Mute/Unmute */}
+            <div className="relative">
+              <motion.div
+                className="flex items-center gap-2"
+                onMouseEnter={() => !isMobile && setShowVolumeSlider(true)}
+                onMouseLeave={() => !isMobile && setShowVolumeSlider(false)}
               >
-                <SkipBack size={isMobile ? 24 : 28} />
-              </motion.button>
-              <motion.button
-                variants={buttonVariants}
-                initial="initial"
-                whileHover="hover"
-                whileTap="tap"
-                onClick={handlePlayPause}
-                className="bg-black text-white w-12 h-12 sm:w-14 sm:h-14 rounded-full flex items-center justify-center bg-primary transition-colors shadow-sm "
-                aria-label={isPlaying ? "Pause" : "Play"}
-              >
-                {isPlaying ? <Pause className="text-background" size={isMobile ? 20 : 24} /> : <Play size={isMobile ? 20 : 24} className="ml-1 text-background" />}
-              </motion.button>
-              <motion.button
-                variants={buttonVariants}
-                initial="initial"
-                whileHover="hover"
-                whileTap="tap"
-                onClick={handleNext}
-                className="text-foreground hover:text-primary transition-colors"
-                aria-label="Next track"
-              >
-                <SkipForward size={isMobile ? 24 : 28} />
-              </motion.button>
-            </motion.div>
-
-            {/* Secondary controls in a separate row */}
-            <motion.div variants={itemVariants} className="flex items-center justify-between">
-              {/* Volume Control on the left */}
-              <div className="relative">
-                <motion.div
-                  className="flex items-center gap-2"
-                  onMouseEnter={() => !isMobile && setShowVolumeSlider(true)}
-                  onMouseLeave={() => !isMobile && setShowVolumeSlider(false)}
+                <motion.button
+                  onClick={isMobile ? () => setShowVolumeSlider(!showVolumeSlider) : toggleMute}
+                  className="text-muted-foreground hover:text-primary transition-colors"
+                  whileHover={{ scale: 1.03 }}
+                  whileTap={{ scale: 0.97 }}
+                  aria-label={muted ? "Unmute" : "Mute"}
                 >
-                  <motion.button
-                    onClick={isMobile ? () => setShowVolumeSlider(!showVolumeSlider) : toggleMute}
-                    className="text-muted-foreground hover:text-primary transition-colors"
-                    whileHover={{ scale: 1.03 }}
-                    whileTap={{ scale: 0.97 }}
-                    aria-label={muted ? "Unmute" : "Mute"}
-                  >
-                    {muted ? <VolumeX size={isMobile ? 16 : 18} /> : <Volume2 size={isMobile ? 16 : 18} />}
-                  </motion.button>
+                  {muted ? <VolumeX size={isMobile ? 16 : 18} /> : <Volume2 size={isMobile ? 16 : 18} />}
+                </motion.button>
 
-                  {/* Desktop always shows volume, mobile shows conditionally */}
-                  <AnimatePresence>
-                    {(!isMobile || showVolumeSlider) && (
-                      <motion.div
-                        className={cn(
-                          "flex items-center gap-2",
-                          isMobile
-                            ? "absolute left-0 bottom-10 bg-card/90 backdrop-blur-sm p-3 rounded-lg shadow-lg border border-border z-10"
-                            : "",
-                        )}
-                        initial={{ opacity: 0, width: 0 }}
-                        animate={{ opacity: 1, width: "auto" }}
-                        exit={{ opacity: 0, width: 0 }}
-                        transition={{ duration: 0.2 }}
-                      >
-                        <Slider
-                          value={[volume * 100]}
-                          max={100}
-                          step={1}
-                          onValueChange={(value) => {
-                            setVolume(value[0] / 100)
-                            if (audioRef.current) {
-                              audioRef.current.muted = false
-                              setMuted(false)
-                            }
-                          }}
-                          className="w-24 cursor-pointer"
-                          aria-label="Volume"
-                        />
-                        <motion.span className="text-xs text-muted-foreground ml-1 select-none">
-                          {Math.round(volume * 100)}%
-                        </motion.span>
-                      </motion.div>
-                    )}
-                  </AnimatePresence>
-                </motion.div>
-              </div>
-
-              {/* Track info icon on the right */}
-              <motion.div whileHover={{ scale: 1.03 }} whileTap={{ scale: 0.97 }} className="text-muted-foreground">
-                <Music2 size={isMobile ? 16 : 18} />
+                {/* Desktop always shows volume, mobile shows conditionally */}
+                <AnimatePresence>
+                  {(!isMobile || showVolumeSlider) && (
+                    <motion.div
+                      className={cn(
+                        "flex items-center gap-2",
+                        isMobile
+                          ? "absolute left-0 bottom-10 bg-card/90 backdrop-blur-sm p-3 rounded-lg shadow-lg border border-border z-10"
+                          : "",
+                      )}
+                      initial={{ opacity: 0, width: 0 }}
+                      animate={{ opacity: 1, width: "auto" }}
+                      exit={{ opacity: 0, width: 0 }}
+                      transition={{ duration: 0.2 }}
+                    >
+                      <Slider
+                        value={[volume * 100]}
+                        max={100}
+                        step={1}
+                        onValueChange={(value) => {
+                          setVolume(value[0] / 100)
+                          if (audioRef.current) {
+                            audioRef.current.muted = false
+                            setMuted(false)
+                          }
+                        }}
+                        className="w-24 cursor-pointer"
+                        aria-label="Volume"
+                      />
+                      <motion.span className="text-xs text-muted-foreground ml-1 select-none">
+                        {Math.round(volume * 100)}%
+                      </motion.span>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
               </motion.div>
+            </div>
+
+            {/* Main Controls */}
+            <motion.button
+              variants={buttonVariants}
+              initial="initial"
+              whileHover="hover"
+              whileTap="tap"
+              onClick={handlePrev}
+              className="text-muted-foreground hover:text-primary transition-colors"
+              aria-label="Previous track"
+            >
+              <SkipBack size={isMobile ? 20 : 24} />
+            </motion.button>
+            <motion.button
+              variants={buttonVariants}
+              initial="initial"
+              whileHover="hover"
+              whileTap="tap"
+              onClick={handlePlayPause}
+              className="bg-primary text-primary-foreground w-10 h-10 sm:w-12 sm:h-12 rounded-full flex items-center justify-center hover:bg-primary/90 transition-colors shadow-sm"
+              aria-label={isPlaying ? "Pause" : "Play"}
+            >
+              {isPlaying ? <Pause size={isMobile ? 16 : 20} /> : <Play size={isMobile ? 16 : 20} className="ml-1" />}
+            </motion.button>
+            <motion.button
+              variants={buttonVariants}
+              initial="initial"
+              whileHover="hover"
+              whileTap="tap"
+              onClick={handleNext}
+              className="text-muted-foreground hover:text-primary transition-colors"
+              aria-label="Next track"
+            >
+              <SkipForward size={isMobile ? 20 : 24} />
+            </motion.button>
+
+            {/* Track info icon */}
+            <motion.div 
+              whileHover={{ scale: 1.03 }} 
+              whileTap={{ scale: 0.97 }} 
+              className="text-muted-foreground"
+            >
+              <Music2 size={isMobile ? 16 : 18} />
             </motion.div>
-          </div>
-        </motion.div>
+          </motion.div>
 
         {/* Track List */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-8 sm:mt-12">{trackList}</div>
-      </div>
+      </motion.div>
     </section>
   )
 }

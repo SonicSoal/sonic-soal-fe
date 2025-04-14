@@ -28,9 +28,9 @@ export function VideoShowcase() {
       </div>
 
       <div className="container mx-auto relative z-10">
-        <h2 className="text-3xl md:text-4xl font-bold mb-2 text-center">SonicSoul in Action</h2>
+        <h2 className="text-3xl md:text-4xl font-bold mb-2 text-center">SonicSoal in Action</h2>
         <p className="text-muted-foreground text-center mb-12 max-w-2xl mx-auto">
-          Watch how {`SonicSoul's`} frequency-optimized audio transforms lives and enhances wellbeing.
+          Watch how {`SonicSoal's`} frequency-optimized audio transforms lives and enhances wellbeing.
         </p>
 
         <div className="max-w-4xl mx-auto">
@@ -40,7 +40,7 @@ export function VideoShowcase() {
             <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-secondary/20 flex items-center justify-center">
               <img
                 src="/placeholder.svg?height=720&width=1280"
-                alt="SonicSoul Experience"
+                alt="SonicSoal Experience"
                 className="w-full h-full object-cover opacity-60"
               />
 
@@ -88,10 +88,10 @@ export function VideoShowcase() {
 
           {/* Video Description */}
           <div className="text-center mb-12">
-            <h3 className="text-2xl font-bold mb-2 text-primary">The SonicSoul Experience</h3>
+            <h3 className="text-2xl font-bold mb-2 text-primary">The SonicSoal Experience</h3>
             <p className="text-muted-foreground">
               Experience the transformative power of frequency-optimized audio in this demonstration video. See how
-              SonicSoul helps users achieve deeper states of focus, relaxation, and spiritual connection.
+              SonicSoal helps users achieve deeper states of focus, relaxation, and spiritual connection.
             </p>
           </div>
 

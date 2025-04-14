@@ -14,7 +14,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "SonicSoul - Feel the Frequency. Align the Soul.",
+  title: "SonicSoal - Feel the Frequency. Align the Soul.",
   description:
     "Experience the power of frequency-optimized audio designed to enhance focus, relaxation, and spiritual alignment.",
     generator: 'v0.dev'

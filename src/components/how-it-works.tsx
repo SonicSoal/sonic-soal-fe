@@ -23,7 +23,7 @@ const steps = [
     icon: <BarChart3 className="h-8 w-8 text-primary" />,
     title: "Progress",
     description:
-      "Track your sessions and earn SonicSoul points as you consistently improve your mental wellness journey.",
+      "Track your sessions and earn SonicSoal points as you consistently improve your mental wellness journey.",
   },
 ]
 
@@ -38,7 +38,7 @@ export function HowItWorks() {
       </div>
 
       <div className="container mx-auto relative z-10">
-        <h2 className="text-3xl md:text-4xl font-bold mb-2 text-center">The SonicSoul Experience</h2>
+        <h2 className="text-3xl md:text-4xl font-bold mb-2 text-center">The SonicSoal Experience</h2>
         <p className="text-muted-foreground text-center mb-16 max-w-2xl mx-auto">
           Our scientifically designed audio sessions use specific frequencies to help your brain achieve optimal states
           for wellbeing and spiritual growth.
@@ -64,7 +64,7 @@ export function HowItWorks() {
         </div>
 
         <div className="mt-16 p-6 bg-card/80 backdrop-blur-sm border border-border rounded-xl max-w-3xl mx-auto shadow-lg">
-          <h3 className="text-xl font-bold mb-4 text-center text-foreground">The Science Behind SonicSoul</h3>
+          <h3 className="text-xl font-bold mb-4 text-center text-foreground">The Science Behind SonicSoal</h3>
           <p className="text-muted-foreground mb-4">
             Our audio technology uses carefully calibrated sound frequencies that correspond to different brainwave
             states, creating a harmonious connection between sound and consciousness:

@@ -1,5 +1,5 @@
-import Link from "next/link"
-import { Facebook, Twitter, Instagram, Youtube } from "lucide-react"
+import Link from 'next/link';
+import { Facebook, Twitter, Instagram, Youtube } from 'lucide-react';
 
 export function Footer() {
   return (
@@ -18,12 +18,12 @@ export function Footer() {
                 S
               </div>
               <span className="ml-2 text-lg font-bold bg-gradient-to-r from-[#14D9C4] to-[#A46EFF] text-transparent bg-clip-text">
-                SonicSoul
+                SonicSoal
               </span>
             </Link>
             <p className="text-muted-foreground text-sm mb-4">
-              SonicSoul delivers frequency-optimized audio to enhance focus, relaxation, and spiritual alignment through
-              the science of sound.
+              SonicSoal delivers frequency-optimized audio to enhance focus,
+              relaxation, and spiritual alignment through the science of sound.
             </p>
             <div className="flex space-x-4">
               <a href="#" className="text-muted-foreground hover:text-primary">
@@ -50,23 +50,35 @@ export function Footer() {
             <h3 className="font-bold mb-4 text-primary">Quick Links</h3>
             <ul className="space-y-2">
               <li>
-                <Link href="#" className="text-muted-foreground hover:text-primary text-sm">
+                <Link
+                  href="#"
+                  className="text-muted-foreground hover:text-primary text-sm"
+                >
                   Home
                 </Link>
               </li>
               <li>
-                <Link href="#how-it-works" className="text-muted-foreground hover:text-primary text-sm">
+                <Link
+                  href="#how-it-works"
+                  className="text-muted-foreground hover:text-primary text-sm"
+                >
                   How It Works
                 </Link>
               </li>
               <li>
-                <Link href="#samples" className="text-muted-foreground hover:text-primary text-sm">
+                <Link
+                  href="#samples"
+                  className="text-muted-foreground hover:text-primary text-sm"
+                >
                   Sample Sessions
                 </Link>
               </li>
               <li>
-                <Link href="#earn" className="text-muted-foreground hover:text-primary text-sm">
-                  Earn VIBBA
+                <Link
+                  href="#earn"
+                  className="text-muted-foreground hover:text-primary text-sm"
+                >
+                  Earn $SOAL
                 </Link>
               </li>
             </ul>
@@ -77,22 +89,34 @@ export function Footer() {
             <h3 className="font-bold mb-4 text-primary">Resources</h3>
             <ul className="space-y-2">
               <li>
-                <Link href="#" className="text-muted-foreground hover:text-primary text-sm">
+                <Link
+                  href="#"
+                  className="text-muted-foreground hover:text-primary text-sm"
+                >
                   Blog
                 </Link>
               </li>
               <li>
-                <Link href="#" className="text-muted-foreground hover:text-primary text-sm">
+                <Link
+                  href="#"
+                  className="text-muted-foreground hover:text-primary text-sm"
+                >
                   Science
                 </Link>
               </li>
               <li>
-                <Link href="#" className="text-muted-foreground hover:text-primary text-sm">
+                <Link
+                  href="#"
+                  className="text-muted-foreground hover:text-primary text-sm"
+                >
                   FAQ
                 </Link>
               </li>
               <li>
-                <Link href="#" className="text-muted-foreground hover:text-primary text-sm">
+                <Link
+                  href="#"
+                  className="text-muted-foreground hover:text-primary text-sm"
+                >
                   Support
                 </Link>
               </li>
@@ -104,22 +128,34 @@ export function Footer() {
             <h3 className="font-bold mb-4 text-primary">Legal</h3>
             <ul className="space-y-2">
               <li>
-                <Link href="#" className="text-muted-foreground hover:text-primary text-sm">
+                <Link
+                  href="#"
+                  className="text-muted-foreground hover:text-primary text-sm"
+                >
                   Terms of Service
                 </Link>
               </li>
               <li>
-                <Link href="#" className="text-muted-foreground hover:text-primary text-sm">
+                <Link
+                  href="#"
+                  className="text-muted-foreground hover:text-primary text-sm"
+                >
                   Privacy Policy
                 </Link>
               </li>
               <li>
-                <Link href="#" className="text-muted-foreground hover:text-primary text-sm">
+                <Link
+                  href="#"
+                  className="text-muted-foreground hover:text-primary text-sm"
+                >
                   Cookie Policy
                 </Link>
               </li>
               <li>
-                <Link href="#" className="text-muted-foreground hover:text-primary text-sm">
+                <Link
+                  href="#"
+                  className="text-muted-foreground hover:text-primary text-sm"
+                >
                   Contact Us
                 </Link>
               </li>
@@ -127,10 +163,21 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="border-t border-muted-foreground/10 mt-12 pt-6 text-center text-muted-foreground text-sm">
-          <p>&copy; {new Date().getFullYear()} SonicSoul. All rights reserved.</p>
+        <div className="border-t border-muted-foreground/10 mt-12 pt-6 text-center text-muted-foreground text-base">
+          <p>
+            &copy; 2025{' '}
+            <strong>
+              SonicSoal<sup>™</sup>
+            </strong>
+            . All rights reserved.
+            <br />
+            <strong>
+              SonicSoal<sup>™</sup>
+            </strong>{' '}
+            is a registered trademark. Patent pending.
+          </p>
         </div>
       </div>
     </footer>
-  )
+  );
 }
