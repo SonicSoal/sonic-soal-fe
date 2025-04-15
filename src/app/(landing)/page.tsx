@@ -1,15 +1,19 @@
-import { AudioPlayer } from "@/components/audio-player"
-import { CTA } from "@/components/cta"
-import { EarnSoal } from "@/components/earn-soal"
-import FaqAccordion from "@/components/faq-section"
-import { Footer } from "@/components/footer"
-import { Header } from "@/components/header"
-import { Hero } from "@/components/hero"
-import { HowItWorks } from "@/components/how-it-works"
-import { VideoShowcase } from "@/components/video-showcase"
+import { CTA } from "@/app/(landing)/_components/cta"
+import { EarnSoal } from "@/app/(landing)/_components/earn-soal"
+import FaqAccordion from "@/app/(landing)/_components/faq-section"
+import { Footer } from "@/app/(landing)/_components/footer"
+import { Header } from "@/app/(landing)/_components/header"
+import { Hero } from "@/app/(landing)/_components/hero"
+import { HowItWorks } from "@/app/(landing)/_components/how-it-works"
+import { VideoShowcase } from "@/app/(landing)/_components/video-showcase"
+import MusicSession from "./_components/music-session"
+import { PreloadAudio } from "@/components/audio-player/preload-audio"
+import audioTracks from "./data/audio-track-list"
 
 export default function Home() {
   return (
+   <>
+   <PreloadAudio tracks={audioTracks}/>
     <div className="min-h-screen bg-gradient-to-b from-background via-background to-background/95 relative overflow-hidden">
       <div className="fixed inset-0 z-0">
         <div className="absolute top-0 left-0 w-full h-[50vh] bg-gradient-to-br from-primary/5 via-secondary/5 to-transparent opacity-70 dark:opacity-30 blur-3xl"></div>
@@ -22,7 +26,7 @@ export default function Home() {
         <Header />
         <main>
           <Hero />
-          <AudioPlayer />
+          <MusicSession />
           <VideoShowcase />
           <HowItWorks />
           <EarnSoal />
@@ -32,5 +36,6 @@ export default function Home() {
         <Footer />
       </div>
     </div>
+   </>
   )
 }
