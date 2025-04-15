@@ -11,7 +11,7 @@ const audioTracks: AudioTrack[] = [
     moodTags: ["manifestation", "creativity", "transformation"],
     category: "Manifestation",
     description: "Crafted to shift your inner current. Subliminally aligned to elevate your state.",
-    url: "/audio/Clean_Slate.mp3",
+    url: "/audio/Clean_Slate.wav",
   },
   {
     id: 2,
@@ -23,7 +23,7 @@ const audioTracks: AudioTrack[] = [
     moodTags: ["peace", "calm", "balance"],
     category: "Peace",
     description: "Harmonizes your internal landscape. Designed to create profound stillness within.",
-    url: "/audio/Cleanse_My_Shadows.mp3",
+    url: "/audio/Cleanse_My_Shadows.wav",
   },
   {
     id: 3,
@@ -35,7 +35,7 @@ const audioTracks: AudioTrack[] = [
     moodTags: ["sleep", "restoration", "healing"],
     category: "Sleep",
     description: "Guides you into the depths of restorative rest. Subliminally calibrated for renewal.",
-    url: "/audio/Cry_Rise_Repeat.mp3",
+    url: "/audio/Cry_Rise_Repeat.wav",
   },
   {
     id: 4,
@@ -47,7 +47,7 @@ const audioTracks: AudioTrack[] = [
     moodTags: ["confidence", "motivation", "clarity"],
     category: "Confidence",
     description: "Awakens your inner potential. Subliminally crafted to amplify self-assurance.",
-    url: "/audio/Float_Night_Drift.mp3",
+    url: "/audio/Float_Night_Drift.wav",
   },
   {
     id: 5,
@@ -59,7 +59,7 @@ const audioTracks: AudioTrack[] = [
     moodTags: ["energy", "vitality", "focus"],
     category: "Energy",
     description: "Ignites your vital force. Subliminally designed to energize your entire being.",
-    url: "/audio/Gratitude_Rejuvenation_TPO_Remix.mp3",
+    url: "/audio/Gratitude_Rejuvenation_TPO_Remix.wav",
   },
   {
     id: 6,
@@ -71,7 +71,7 @@ const audioTracks: AudioTrack[] = [
     moodTags: ["focus", "clarity", "productivity"],
     category: "Focus",
     description: "Sharpens your mental landscape. Subliminally tuned to enhance cognitive clarity.",
-    url: "/audio/Grind_Magnetism.mp3",
+    url: "/audio/Grind_Magnetism.wav",
   },
   {
     id: 7,
@@ -83,7 +83,7 @@ const audioTracks: AudioTrack[] = [
     moodTags: ["focus", "clarity", "productivity"],
     category: "Focus",
     description: "Sharpens your mental landscape. Subliminally tuned to enhance cognitive clarity.",
-    url: "/audio/Indigo_Dreamin.mp3",
+    url: "/audio/Indigo_Dreamin.wav",
   },
   {
     id: 8,
@@ -95,7 +95,7 @@ const audioTracks: AudioTrack[] = [
     moodTags: ["focus", "clarity", "productivity"],
     category: "Focus",
     description: "Sharpens your mental landscape. Subliminally tuned to enhance cognitive clarity.",
-    url: "/audio/Limitless_Core.mp3",
+    url: "/audio/Limitless_Core.wav",
   },
   {
     id: 9,
@@ -107,7 +107,7 @@ const audioTracks: AudioTrack[] = [
     moodTags: ["focus", "clarity", "productivity"],
     category: "Focus",
     description: "Sharpens your mental landscape. Subliminally tuned to enhance cognitive clarity.",
-    url: "/audio/PowerCode.mp3",
+    url: "/audio/PowerCode.wav",
   },
   {
     id: 10,
@@ -119,7 +119,7 @@ const audioTracks: AudioTrack[] = [
     moodTags: ["focus", "clarity", "productivity"],
     category: "Focus",
     description: "Sharpens your mental landscape. Subliminally tuned to enhance cognitive clarity.",
-    url: "/audio/Script_Your_Reality.mp3",
+    url: "/audio/Script_Your_Reality.wav",
   },
   {
     id: 11,
@@ -131,7 +131,7 @@ const audioTracks: AudioTrack[] = [
     moodTags: ["focus", "clarity", "productivity"],
     category: "Focus",
     description: "Sharpens your mental landscape. Subliminally tuned to enhance cognitive clarity.",
-    url: "/audio/Serenity_Unlock.mp3",
+    url: "/audio/Serenity_Unlock.wav",
   },
   {
     id: 12,
@@ -143,7 +143,7 @@ const audioTracks: AudioTrack[] = [
     moodTags: ["focus", "clarity", "productivity"],
     category: "Focus",
     description: "Sharpens your mental landscape. Subliminally tuned to enhance cognitive clarity.",
-    url: "/audio/Trauma_Flush.mp3",
+    url: "/audio/Trauma_Flush.wav",
   },
 ]
 

@@ -1,8 +1,8 @@
-"use client"
+'use client';
 
-import { AudioPlayer } from "@/components/audio-player/audio-player"
-import { motion } from "framer-motion"
-import audioTracks from "../data/audio-track-list"
+import { AudioPlayer } from '@/components/audio-player/audio-player';
+import { motion } from 'framer-motion';
+import audioTracks from '../data/audio-track-list';
 
 export default function MusicSession() {
   return (
@@ -28,17 +28,18 @@ export default function MusicSession() {
           transition={{ duration: 0.3, delay: 0.1 }}
           className="text-muted-foreground text-center mb-12 max-w-2xl mx-auto"
         >
-          Listen to sample sessions featuring our TPO-enhanced audio with SonicSoal subliminal tuning, designed to
-          transform your state of mind and connect you to deeper levels of consciousness.
+          Listen to sample sessions featuring our TPO-enhanced audio with
+          SonicSoal subliminal tuning, designed to transform your state of mind
+          and connect you to deeper levels of consciousness.
         </motion.p>
 
         <AudioPlayer
           tracks={audioTracks}
           onTrackChange={(track, index) => {
-            console.log(`Now playing: ${track.title} (index: ${index})`)
+            console.log(`Now playing: ${track.title} (index: ${index})`);
           }}
         />
       </div>
     </section>
-  )
+  );
 }
