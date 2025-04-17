@@ -5,7 +5,7 @@ import { useState } from "react"
 import { Plus, X } from "lucide-react"
 
 interface FaqItem {
-  question: string
+  question: React.ReactNode
   answer: React.ReactNode
 }
 
@@ -18,23 +18,23 @@ export default function FaqAccordion() {
 
   const faqs: FaqItem[] = [
     {
-      question: "Why does $SOAL increase focus?",
+      question: <div>Why does <b>$SOAL</b> increase focus?</div>,
       answer: (
         <div className="space-y-4 text-muted-foreground">
           <p>
-            $SOAL uses scientifically designed audio frequencies that synchronize with your brainwaves to enhance neural coherence and optimize cognitive function.
+            <b>$SOAL</b> uses scientifically designed audio frequencies that synchronize with your brainwaves to enhance neural coherence and optimize cognitive function.
           </p>
           <p>
-            In a way, you could think of $SOAL as neural entrainment 2.0. We took the concept behind traditional audio therapies and applied an updated understanding of neuroscience and auditory processing to create a more effective and powerful solution.
+            In a way, you could think of <b>$SOAL</b> as neural entrainment 2.0. We took the concept behind traditional audio therapies and applied an updated understanding of neuroscience and auditory processing to create a more effective and powerful solution.``
           </p>
           <p>Some core mechanisms:</p>
           <ul className="list-disc pl-6 space-y-2">
-            <li>$SOAL impacts the prefrontal cortex which is where all your thinking and creativity comes from</li>
+            <li><b>$SOAL</b> impacts the prefrontal cortex which is where all your thinking and creativity comes from</li>
             <li>Our frequencies help reduce distracting thoughts by stabilizing neural oscillations</li>
             <li>The audio patterns create an optimal environment for sustained attention</li>
             <li>Background noise and distractions are effectively masked by our carefully designed soundscapes</li>
           </ul>
-          <p>Most importantly, $SOAL uses many methods to make our audio work, not just a single technique!</p>
+          <p>Most importantly, <b>$SOAL</b> uses many methods to make our audio work, not just a single technique!</p>
         </div>
       ),
     },
@@ -43,19 +43,19 @@ export default function FaqAccordion() {
       answer: (
         <div className="space-y-4 text-muted-foreground">
           <p>
-            $SOAL is not binaural beats. There are some similarities, but it&apos;s important to remember that binaural beats were first discovered in 1839, popularized in the 1970&apos;s and haven&apos;t really changed since.
+            <b>$SOAL</b> is not binaural beats. There are some similarities, but it&apos;s important to remember that binaural beats were first discovered in 1839, popularized in the 1970&apos;s and haven&apos;t really changed since.
           </p>
           <p>
-            In a way, you could think of $SOAL as binaural beats 2.0. We took the concept behind binaural beats and applied an updated understanding of neuroscience and auditory processing to create a more effective and powerful solution.
+            In a way, you could think of <b>$SOAL</b> as binaural beats 2.0. We took the concept behind binaural beats and applied an updated understanding of neuroscience and auditory processing to create a more effective and powerful solution.
           </p>
           <p>Some core differences:</p>
           <ul className="list-disc pl-6 space-y-2">
             <li>Binaural beats primarily impact the lower brain which is not where thinking or creativity occurs.</li>
-            <li>$SOAL impacts the prefrontal cortex which is where all your thinking and creativity comes from</li>
+            <li><b>$SOAL</b> impacts the prefrontal cortex which is where all your thinking and creativity comes from</li>
             <li>Binaural beats require both ears to be free of hearing damage and high-quality headphones to be on.</li>
-            <li>$SOAL works with one or two ears, does not require headphones, and is not dependent on your ability to hear certain frequencies.</li>
+            <li><b>$SOAL</b> works with one or two ears, does not require headphones, and is not dependent on your ability to hear certain frequencies.</li>
           </ul>
-          <p>Most importantly, $SOAL uses many methods to make our audio work, unlike binaural beats which is just one technique!</p>
+          <p>Most importantly, <b>$SOAL</b> uses many methods to make our audio work, unlike binaural beats which is just one technique!</p>
         </div>
       ),
     },
@@ -82,12 +82,12 @@ export default function FaqAccordion() {
       answer: (
         <div className="space-y-4 text-muted-foreground">
           <p>
-            No, $SOAL is designed for everyone who wants to improve their focus, relaxation, or sleep quality, regardless of whether they have ADHD or not.
+            No, <b>$SOAL</b> is designed for everyone who wants to improve their focus, relaxation, or sleep quality, regardless of whether they have ADHD or not.
           </p>
           <p>
             While many users with ADHD report significant benefits from our sessions, our technology works with the fundamental neural mechanisms that all humans share.
           </p>
-          <p>$SOAL helps with:</p>
+          <p><b>$SOAL</b> helps with:</p>
           <ul className="list-disc pl-6 space-y-2">
             <li>General focus and productivity for anyone doing knowledge work</li>
             <li>Creative flow states for artists, writers, and other creative professionals</li>
@@ -103,17 +103,17 @@ export default function FaqAccordion() {
       answer: (
         <div className="space-y-4 text-muted-foreground">
           <p>
-            Unlike regular music, $SOAL is specifically engineered to enhance cognitive function rather than just provide entertainment.
+            Unlike regular music, <b>$SOAL</b> is specifically engineered to enhance cognitive function rather than just provide entertainment.
           </p>
           <p>Key differences include:</p>
           <ul className="list-disc pl-6 space-y-2">
             <li>Regular music often contains lyrics, which compete for your verbal processing resources</li>
             <li>Music typically has dynamic changes in tempo, volume, and emotional tone that can be distracting</li>
-            <li>$SOAL uses precise frequencies and patterns that work with your brain&apos;s natural rhythms</li>
+            <li><b>$SOAL</b> uses precise frequencies and patterns that work with your brain&apos;s natural rhythms</li>
             <li>Our audio maintains consistent properties that create an optimal environment for sustained focus</li>
-            <li>Regular music is designed to engage your emotions; $SOAL is designed to optimize your cognitive state</li>
+            <li>Regular music is designed to engage your emotions; <b>$SOAL</b> is designed to optimize your cognitive state</li>
           </ul>
-          <p>While some instrumental music can be helpful for focus, it&apos;s not specifically designed for cognitive enhancement the way $SOAL is.</p>
+          <p>While some instrumental music can be helpful for focus, it&apos;s not specifically designed for cognitive enhancement the way <b>$SOAL</b> is.</p>
         </div>
       ),
     },
@@ -121,13 +121,13 @@ export default function FaqAccordion() {
       question: "How do I make $SOAL work best for me?",
       answer: (
         <div className="space-y-4 text-muted-foreground">
-          <p>To get the most out of $SOAL, we recommend following these best practices:</p>
+          <p>To get the most out of <b>$SOAL</b>, we recommend following these best practices:</p>
           <ul className="list-disc pl-6 space-y-2">
             <li>Use headphones when possible for the most immersive experience</li>
             <li>Start with 15–30 minute sessions and gradually increase as needed</li>
             <li>Match the session type to your activity (focus for work, relax for unwinding, etc.)</li>
             <li>Set a clear intention for what you want to accomplish during your session</li>
-            <li>Use $SOAL consistently to train your brain to respond more quickly to the frequencies</li>
+            <li>Use <b>$SOAL</b> consistently to train your brain to respond more quickly to the frequencies</li>
             <li>Experiment with different volume levels to find what works best for you</li>
           </ul>
           <p>Everyone&apos;s brain is unique, so don&apos;t be afraid to experiment with different session types and settings to find your optimal configuration.</p>
@@ -138,6 +138,14 @@ export default function FaqAccordion() {
 
   return (
     <div className="w-full max-w-5xl mx-auto py-20 px-4">
+      <div className="text-center mb-12">
+        <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
+          Frequently Asked Questions
+        </h2>
+        <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
+          Everything you need to know about how <b>$SOAL</b> works and why it&apos;s different from other focus tools.
+        </p>
+      </div>
       {faqs.map((faq, index) => (
         <div key={index} className="border-b border-border">
           <button

@@ -1,33 +1,67 @@
-import { Brain, Headphones, Zap, BarChart3 } from "lucide-react"
-
-const steps = [
-  {
-    icon: <Headphones className="h-8 w-8 text-primary" />,
-    title: "Listen",
-    description:
-      "Choose a session that matches your desired state of mind and listen with headphones for optimal experience.",
-  },
-  {
-    icon: <Brain className="h-8 w-8 text-primary" />,
-    title: "Align",
-    description:
-      "Your brainwaves naturally synchronize with the audio frequencies, guiding you into the desired mental state.",
-  },
-  {
-    icon: <Zap className="h-8 w-8 text-primary" />,
-    title: "Transform",
-    description:
-      "Experience enhanced focus, deeper relaxation, or elevated creativity as your mind aligns with the frequencies.",
-  },
-  {
-    icon: <BarChart3 className="h-8 w-8 text-primary" />,
-    title: "Progress",
-    description:
-      "Track your sessions and earn SonicSoal points as you consistently improve your mental wellness journey.",
-  },
-]
+import { Music, Play, Waves, Sparkles, Coins, Brain, Vibrate, Ear } from 'lucide-react'
+import { Button } from "@/components/ui/button"
+import Link from "next/link"
 
 export function HowItWorks() {
+  const steps = [
+    {
+      icon: <Music className="h-8 w-8 text-primary" />,
+      title: "1. Choose Your Session",
+      description: "Pick from our curated library of sonic experiences designed to help with:",
+      bullets: [
+        "Energy Boost",
+        "Emotional Reset",
+        "Focus & Flow",
+        "Calm & Clarity",
+        "Love & Connection"
+      ],
+      extra: "Each session pairs real music with embedded SonicSoal frequency layers tailored to your intention."
+    },
+    {
+      icon: <Play className="h-8 w-8 text-primary" />,
+      title: "2. Just Press Play",
+      description: "No complicated setup. Just play the track. Headphones are optional—but recommended for deeper immersion.",
+    },
+    {
+      icon: <Waves className="h-8 w-8 text-primary" />,
+      title: "3. Subtle Frequencies Go to Work",
+      description: "SonicSoal uses layered frequencies that include:",
+      bullets: [
+        "Binaural & Isochronic tones (for brainwave entrainment)",
+        "Solfeggio & Planetary harmonics (for emotional and spiritual tuning)",
+        "Psychoacoustic blending (so you feel the shift without hearing the tech)"
+      ]
+    },
+    {
+      icon: <Sparkles className="h-8 w-8 text-primary" />,
+      title: "4. You Feel the Shift",
+      description: "Within seconds to minutes, the blend begins syncing with your body's natural rhythms. Whether you notice a physical calm, mental alertness, or emotional grounding—your system is tuning itself.",
+    },
+    {
+      icon: <Coins className="h-8 w-8 text-primary" />,
+      title: "5. Earn $SOAL for Every Session",
+      description: "Each time you complete a session, maintain a streak, or hit a milestone, you earn $SOAL—our official token of alignment. You can redeem $SOAL for premium sessions, upgrades, or special access.",
+    }
+  ]
+
+  const sciencePoints = [
+    {
+      icon: <Brain className="h-5 w-5 text-primary" />,
+      title: "Brainwave Entrainment",
+      description: "Certain frequencies (like 4.5 Hz or 10 Hz) can gently guide the brain into states like deep relaxation, focus, or creativity."
+    },
+    {
+      icon: <Vibrate className="h-5 w-5 text-primary" />,
+      title: "Vibrational Influence",
+      description: "Just like sound can break glass or move water, subtle audio layers can influence your nervous system, mood, and energy."
+    },
+    {
+      icon: <Ear className="h-5 w-5 text-primary" />,
+      title: "Subconscious Reception",
+      description: "Our tech uses low-volume, adaptive tones designed to bypass the conscious mind and speak directly to your body's frequency field."
+    }
+  ]
+
   return (
     <section id="how-it-works" className="py-20 px-4 relative">
       {/* Background gradient */}
@@ -37,77 +71,78 @@ export function HowItWorks() {
         <div className="absolute bottom-0 left-0 w-full h-1/2 bg-gradient-to-tr from-primary/5 to-transparent opacity-60 dark:opacity-30 blur-3xl"></div>
       </div>
 
-      <div className="container mx-auto relative z-10">
-        <h2 className="text-3xl md:text-4xl font-bold mb-2 text-center">The SonicSoal Experience</h2>
-        <p className="text-muted-foreground text-center mb-16 max-w-2xl mx-auto">
-          Our scientifically designed audio sessions use specific frequencies to help your brain achieve optimal states
-          for wellbeing and spiritual growth.
+      <div className="mx-auto relative z-10">
+        <h2 className="text-3xl md:text-4xl font-bold mb-2 text-center">How It Works</h2>
+        <p className="text-muted-foreground text-center mb-8 max-w-2xl mx-auto">
+          Step Into Your Frequency
+        </p>
+        <p className="text-muted-foreground text-center mb-16 max-w-3xl mx-auto">
+          SonicSoal is more than music—it&apos;s energetic alignment through sound. Every session is embedded with precise, inaudible frequency patterns that work with your body and brain to help shift your mood, focus, energy, or emotional state—without you even realizing it.
         </p>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 gap-12 max-w-4xl mx-auto">
           {steps.map((step, index) => (
-            <div key={index} className="flex flex-col items-center text-center">
-              <div className="w-20 h-20 rounded-full bg-gradient-to-br from-background to-background/80 border border-primary/30 flex items-center justify-center mb-6 shadow-md relative group">
+            <div key={index} className="flex flex-col md:flex-row gap-6 items-start">
+              <div className="w-16 h-16 rounded-full bg-gradient-to-br from-background to-background/80 border border-primary/30 flex items-center justify-center shadow-md relative group shrink-0 mx-auto md:mx-0">
                 <div className="absolute inset-0 rounded-full bg-gradient-to-br from-primary/20 to-secondary/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 <div className="relative z-10">{step.icon}</div>
               </div>
-              <h3 className="text-xl font-bold mb-3 text-primary">{step.title}</h3>
-              <p className="text-muted-foreground">{step.description}</p>
-
-              {index < steps.length - 1 && (
-                <div className="hidden lg:block absolute transform translate-x-[160px]">
-                  <div className="w-12 h-0.5 bg-gradient-to-r from-primary to-transparent"></div>
-                </div>
-              )}
+              <div>
+                <h3 className="text-xl font-bold mb-3 text-primary text-center md:text-left">{step.title}</h3>
+                <p className="text-muted-foreground mb-3">{step.description}</p>
+                
+                {step.bullets && (
+                  <ul className="space-y-2 mb-3">
+                    {step.bullets.map((bullet, i) => (
+                      <li key={i} className="flex items-start gap-2">
+                        <span className="text-primary font-bold">•</span>
+                        <span className="text-muted-foreground">{bullet}</span>
+                      </li>
+                    ))}
+                  </ul>
+                )}
+                
+                {step.extra && (
+                  <p className="text-muted-foreground italic">{step.extra}</p>
+                )}
+              </div>
             </div>
           ))}
         </div>
 
         <div className="mt-16 p-6 bg-card/80 backdrop-blur-sm border border-border rounded-xl max-w-3xl mx-auto shadow-lg">
-          <h3 className="text-xl font-bold mb-4 text-center text-foreground">The Science Behind SonicSoal</h3>
-          <p className="text-muted-foreground mb-4">
-            Our audio technology uses carefully calibrated sound frequencies that correspond to different brainwave
-            states, creating a harmonious connection between sound and consciousness:
+          <h3 className="text-xl font-bold mb-4 text-center text-foreground">Why It Works – The Science Behind SonicSoal</h3>
+          
+          <div className="space-y-6">
+            {sciencePoints.map((point, index) => (
+              <div key={index} className="flex gap-4">
+                <div className="mt-1 shrink-0">
+                  {point.icon}
+                </div>
+                <div>
+                  <h4 className="font-bold text-foreground">{point.title}</h4>
+                  <p className="text-muted-foreground">{point.description}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <div className="mt-12 text-center">
+          <h3 className="text-xl font-bold mb-4">Try It Now</h3>
+          <p className="text-muted-foreground mb-6 max-w-2xl mx-auto">
+            Start your first session and feel what it&apos;s like to be in harmony with your own frequency.
           </p>
-          <ul className="space-y-2">
-            <li className="flex items-start gap-2">
-              <span className="text-primary font-bold">•</span>
-              <span>
-                <strong className="text-foreground">Delta (0.5-4 Hz):</strong>{" "}
-                <span className="text-muted-foreground">Deep sleep, healing, and subconscious exploration</span>
-              </span>
-            </li>
-            <li className="flex items-start gap-2">
-              <span className="text-primary font-bold">•</span>
-              <span>
-                <strong className="text-foreground">Theta (4-8 Hz):</strong>{" "}
-                <span className="text-muted-foreground">Meditation, creativity, and spiritual connection</span>
-              </span>
-            </li>
-            <li className="flex items-start gap-2">
-              <span className="text-primary font-bold">•</span>
-              <span>
-                <strong className="text-foreground">Alpha (8-13 Hz):</strong>{" "}
-                <span className="text-muted-foreground">Relaxation, calmness, and mindful awareness</span>
-              </span>
-            </li>
-            <li className="flex items-start gap-2">
-              <span className="text-primary font-bold">•</span>
-              <span>
-                <strong className="text-foreground">Beta (13-30 Hz):</strong>{" "}
-                <span className="text-muted-foreground">Focus, productivity, and active problem-solving</span>
-              </span>
-            </li>
-            <li className="flex items-start gap-2">
-              <span className="text-primary font-bold">•</span>
-              <span>
-                <strong className="text-foreground">Gamma (30-100 Hz):</strong>{" "}
-                <span className="text-muted-foreground">
-                  Peak cognitive performance and higher states of consciousness
-                </span>
-              </span>
-            </li>
-          </ul>
+          <Button 
+            size="lg"
+            className="bg-primary hover:bg-primary/90 transition-all duration-300 shadow-md hover:shadow-lg relative overflow-hidden group"
+            asChild
+          >
+            <Link href="#samples">
+              <span className="absolute inset-0 w-0 bg-white/10 transition-all duration-300 ease-out group-hover:w-full"></span>
+              <span className="relative">Try a Free Session</span>
+            </Link>
+          </Button>
         </div>
       </div>
     </section>

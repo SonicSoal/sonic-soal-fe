@@ -28,7 +28,7 @@ export function VideoShowcase() {
       </div>
 
       <div className="container mx-auto relative z-10">
-        <h2 className="text-3xl md:text-4xl font-bold mb-2 text-center">SonicSoal in Action</h2>
+        <h2 className="text-3xl md:text-4xl font-bold mb-2 text-center"><span className="text-secondary">SonicSoal</span> in Action</h2>
         <p className="text-muted-foreground text-center mb-12 max-w-2xl mx-auto">
           Watch how {`SonicSoal's`} frequency-optimized audio transforms lives and enhances wellbeing.
         </p>

@@ -22,7 +22,7 @@ export function CTA() {
               </div>
             </div>
 
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">Begin Your SonicSoal Journey</h2>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">Begin Your <span className="text-secondary">SonicSoal</span> Journey</h2>
             <p className="text-muted-foreground text-lg mb-8 max-w-2xl mx-auto">
               Start your frequency alignment journey today and experience the difference in your focus, creativity,
               spiritual connection, and overall wellbeing.

@@ -20,7 +20,7 @@ export default function MusicSession() {
           transition={{ duration: 0.3 }}
           className="text-3xl md:text-4xl font-bold mb-2 text-center text-foreground"
         >
-          Experience TPO-Enhanced SonicSoal Sessions
+          Experience TPO-Enhanced <span className="text-secondary">SonicSoal</span> Sessions
         </motion.h2>
         <motion.p
           initial={{ opacity: 0 }}
