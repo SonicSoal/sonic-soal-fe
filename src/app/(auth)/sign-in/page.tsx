@@ -18,7 +18,7 @@ export default function SignInPage() {
         <div className="absolute bottom-1/4 left-1/4 w-[25vw] h-[25vw] rounded-full bg-secondary/5 dark:bg-secondary/10 blur-3xl animate-pulse-slow animation-delay-2000"></div>
       </div>
 
-      <div className="relative z-10 flex-1 flex flex-col items-center justify-center px-4 py-12">
+      <div className="relative z-10 flex-1 flex flex-col items-center md:justify-center px-4 py-12">
         <SigninForm />
       </div>
     </div>

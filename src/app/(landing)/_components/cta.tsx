@@ -34,7 +34,7 @@ export function CTA() {
                 className="bg-primary hover:bg-primary/90 transition-all duration-300 text-base shadow-md hover:shadow-lg relative overflow-hidden group"
                 asChild
               >
-                <Link href="#">
+                <Link href="/sign-in">
                   <span className="absolute inset-0 w-0 bg-white/10 transition-all duration-300 ease-out group-hover:w-full"></span>
                   <span className="relative flex items-center">
                     Try for Free
@@ -51,7 +51,7 @@ export function CTA() {
                 className="border-primary text-primary hover:bg-primary/10 hover:border-primary transition-all duration-300 text-base relative overflow-hidden group"
                 asChild
               >
-                <Link href="#">
+                <Link href="/sign-in">
                   <span className="absolute inset-0 w-0 bg-primary/10 transition-all duration-300 ease-out group-hover:w-full"></span>
                   <span className="relative">Sign In</span>
                 </Link>

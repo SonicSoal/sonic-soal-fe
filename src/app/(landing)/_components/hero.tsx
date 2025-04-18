@@ -19,8 +19,7 @@ export function Hero() {
           </div>
         </div>
         <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 bg-gradient-to-r from-[#14D9C4] to-[#A46EFF] text-transparent bg-clip-text">
-          SonicSoal:
-          Frequency for Your Soul
+          SonicSoal: Frequency for Your Soul
         </h1>
         <p className="text-muted-foreground text-xl md:text-2xl max-w-3xl mx-auto mb-10">
           Experience the transformative power of frequency-optimized audio
@@ -33,7 +32,7 @@ export function Hero() {
             className="bg-primary hover:bg-primary/90 transition-all duration-300 shadow-md hover:shadow-lg relative overflow-hidden group"
             asChild
           >
-            <Link href="#samples">
+            <Link href="/sign-in" passHref>
               <span className="absolute inset-0 w-0 bg-white/10 transition-all duration-300 ease-out group-hover:w-full"></span>
               <span className="relative flex items-center">
                 Try for Free

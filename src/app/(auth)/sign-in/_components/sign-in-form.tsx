@@ -27,7 +27,7 @@ export function SigninForm() {
       }
     } catch (err) {
       console.log(err);
-    }finally{
+    } finally {
       setIsLoading(false);
     }
   };
@@ -36,15 +36,22 @@ export function SigninForm() {
 
   return (
     <div className="w-full max-w-lg mx-auto">
-      <Link
-        href="/"
-        className="flex items-center gap-2 text-muted-foreground hover:text-foreground transition-colors mb-6"
-      >
-        <ArrowLeft size={16} />
-        <span>Back to home</span>
+      <Link href="/" legacyBehavior>
+        <a
+          className="
+            relative z-20
+            inline-flex items-center gap-2
+            p-2 min-h-[44px] /* ensure 44px height */
+            text-muted-foreground hover:text-foreground
+            transition-colors
+          "
+        >
+          <ArrowLeft size={16} />
+          <span>Back to home</span>
+        </a>
       </Link>
 
-      <Card className="w-full backdrop-blur-sm bg-background/70 border-primary/10 shadow-xl">
+      <Card className="w-full backdrop-blur-sm bg-background/70 border-primary/10 shadow-xl max-md:border-none">
         <CardHeader className="space-y-2 text-center">
           <div className="flex justify-center mb-2">
             <div className="relative">
