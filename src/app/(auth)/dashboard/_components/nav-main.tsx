@@ -17,7 +17,6 @@ import {
 } from '@/components/ui/sidebar';
 import { cn, isActivePath } from '@/lib/utils';
 import { usePathname } from 'next/navigation';
-import { useMemo } from 'react';
 
 export function NavMain({
   items,
@@ -33,12 +32,6 @@ export function NavMain({
   }[];
 }) {
   const pathName = usePathname();
-
-  const refinedPathname = useMemo(() => {
-    console.log('refinedPathname', pathName);
-    if (pathName === '/') return '/dashboard';
-    return pathName;
-  }, [pathName]);
 
   return (
     <SidebarGroup>
@@ -78,10 +71,18 @@ export function NavMain({
                 href={item.href}
                 passHref
                 className={cn({
-                  '!text-primary': isActivePath(item.href, refinedPathname, false, '/dashboard'),
+                  '!text-primary': isActivePath(
+                    item.href,
+                    pathName,
+                    false,
+                    '/dashboard'
+                  ),
                 })}
               >
-                <SidebarMenuButton className="cursor-pointer" tooltip={item.title}>
+                <SidebarMenuButton
+                  className="cursor-pointer"
+                  tooltip={item.title}
+                >
                   {item.icon && item.icon}
                   <span>{item.title}</span>
                 </SidebarMenuButton>

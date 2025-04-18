@@ -12,19 +12,25 @@ import {
   CardHeader,
   CardTitle,
 } from '@/components/ui/card';
-import { useRouter } from 'next/navigation';
+import { useAuth } from '@/contexts/auth-context'; // 🔥 import the auth context
 // import { Separator } from "@/components/ui/separator"
 
 export function SigninForm() {
   const [isLoading, setIsLoading] = useState(false);
+  const { signInWithGoogle, user } = useAuth(); // 🔥 hook into the auth context
 
-  const router = useRouter();
-  const handleOAuthLogin = (provider = 'google') => {
-    setIsLoading(true);
-    console.log(provider);
-    router.push('/dashboard');
-    setTimeout(() => setIsLoading(false), 1000);
+  const handleOAuthLogin = async (provider = 'google') => {
+    try {
+      setIsLoading(true);
+      if (provider === 'google') {
+        await signInWithGoogle();
+      }
+    } catch (err) {
+      console.log(err);
+    }
   };
+
+  if (user) return null;
 
   return (
     <div className="w-full max-w-lg mx-auto">
