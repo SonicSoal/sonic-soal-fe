@@ -63,8 +63,6 @@ const ERROR_MESSAGES: Record<string, string> = {
     'Too many attempts. Please wait and try again later.',
   'auth/network-request-failed':
     'Network error. Check your connection and try again.',
-  'auth/popup-closed-by-user':
-    'Sign‑in popup closed. Please complete the sign‑in flow.',
 };
 
 const AuthContext = createContext<AuthContextType | undefined>(undefined);
@@ -95,23 +93,17 @@ export function AuthProvider({ children }: { children: ReactNode }) {
 
   // 2. Updated handleError
   function handleError(e: unknown) {
-    // a) Determine message
-    const msg =
-      e instanceof FirebaseError
-        ? ERROR_MESSAGES[e.code] ?? 'Something went wrong. Please try again.'
-        : 'Something went wrong. Please try again.';
-
-    // b) Show toast
-    toast.error('Authentication Error', {
-      description: msg,
-      action: {
-        label: 'Dismiss',
-        onClick: () => toast.dismiss(),
-      },
-    });
-
-    // c) Log for debugging
-    console.error('Firebase error:', e);
+    if (e instanceof FirebaseError && ERROR_MESSAGES[e.code]) {
+      toast.error('Authentication Error', {
+        description: ERROR_MESSAGES[e.code],
+        action: {
+          label: 'Dismiss',
+          onClick: () => toast.dismiss(),
+        },
+      });
+    } else {
+      console.error('Firebase error:', e);
+    }
   }
 
   // Google OAuth
@@ -192,11 +184,11 @@ export function AuthProvider({ children }: { children: ReactNode }) {
 
   useEffect(() => {
     if (user && !loading) {
-      if(window.location.pathname === '/sign-in') {
+      if (window.location.pathname === '/sign-in') {
         router.push('/dashboard');
       }
     } else if (!loading) {
-     if(window.location.pathname === '/dashboard') {
+      if (window.location.pathname === '/dashboard') {
         router.push('/sign-in');
       }
     }

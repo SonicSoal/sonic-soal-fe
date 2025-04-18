@@ -1,0 +1,1 @@
+ npx pwa-asset-generator ./public/audio-wave.svg public -m ./public/manifest.json  --padding "calc(50vh - 25%) calc(50vw - 25%)" -b "#0C0F0F" -q 100 -i ./public/asset-generator-changes.html --favicon

@@ -16,19 +16,15 @@ import { useAuth } from '@/contexts/auth-context'; // 🔥 import the auth conte
 // import { Separator } from "@/components/ui/separator"
 
 export function SigninForm() {
-  const [isLoading, setIsLoading] = useState(false);
   const { signInWithGoogle, user } = useAuth(); // 🔥 hook into the auth context
 
   const handleOAuthLogin = async (provider = 'google') => {
-    try {
-      setIsLoading(true);
+    try{
       if (provider === 'google') {
         await signInWithGoogle();
       }
-    } catch (err) {
-      console.log(err);
-    } finally {
-      setIsLoading(false);
+    }catch (error) {
+      console.error('Error signing in with Google:', error);
     }
   };
 
@@ -36,19 +32,18 @@ export function SigninForm() {
 
   return (
     <div className="w-full max-w-lg mx-auto">
-      <Link href="/" legacyBehavior>
-        <a
-          className="
+      <Link
+        href="/"
+        className="
             relative z-20
             inline-flex items-center gap-2
             p-2 min-h-[44px] /* ensure 44px height */
             text-muted-foreground hover:text-foreground
             transition-colors
           "
-        >
-          <ArrowLeft size={16} />
-          <span>Back to home</span>
-        </a>
+      >
+        <ArrowLeft size={16} />
+        <span>Back to home</span>
       </Link>
 
       <Card className="w-full backdrop-blur-sm bg-background/70 border-primary/10 shadow-xl max-md:border-none">
@@ -74,7 +69,6 @@ export function SigninForm() {
             variant="outline"
             className="w-full relative overflow-hidden group border-primary/20 hover:border-primary/40 hover:bg-primary/5"
             onClick={() => handleOAuthLogin('google')}
-            disabled={isLoading}
           >
             <span className="absolute inset-0 w-0 bg-primary/10 transition-all duration-300 ease-out group-hover:w-full"></span>
             <span className="relative flex items-center justify-center gap-2">
