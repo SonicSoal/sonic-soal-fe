@@ -85,7 +85,7 @@ export function SigninForm() {
             </span>
           </Button>
 
-          <Button
+          {/* <Button
             variant="outline"
             className="w-full relative overflow-hidden group border-primary/20 hover:border-primary/40 hover:bg-primary/5"
             onClick={() => handleOAuthLogin('apple')}
@@ -99,7 +99,7 @@ export function SigninForm() {
               </svg>
               Continue with Apple
             </span>
-          </Button>
+          </Button> */}
 
           {/* <div className="relative">
             <div className="absolute inset-0 flex items-center">
@@ -110,7 +110,7 @@ export function SigninForm() {
             </div>
           </div> */}
 
-          <Button
+          {/* <Button
             variant="outline"
             className="w-full relative overflow-hidden group border-primary/20 hover:border-primary/40 hover:bg-primary/5"
             onClick={() => handleOAuthLogin('discord')}
@@ -123,7 +123,7 @@ export function SigninForm() {
               </svg>
               Continue with Discord
             </span>
-          </Button>
+          </Button> */}
         </CardContent>
         <CardFooter className="flex flex-col space-y-2 text-center text-sm text-muted-foreground">
           {/* <div>
