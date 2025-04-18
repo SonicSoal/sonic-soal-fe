@@ -27,6 +27,8 @@ export function SigninForm() {
       }
     } catch (err) {
       console.log(err);
+    }finally{
+      setIsLoading(false);
     }
   };
 
