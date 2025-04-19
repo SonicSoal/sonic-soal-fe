@@ -12,6 +12,7 @@ import {
   CardTitle,
 } from '@/components/ui/card';
 import { useAuth } from '@/contexts/auth-context'; // 🔥 import the auth context
+import { SonicLoader } from "@/components/sonic-loader";
 // import { Separator } from "@/components/ui/separator"
 
 export function SigninForm() {
@@ -27,7 +28,7 @@ export function SigninForm() {
     }
   };
 
-  if (user) return null;
+  if (user) return <SonicLoader/>;
 
   return (
     <div className="w-full max-w-lg mx-auto">

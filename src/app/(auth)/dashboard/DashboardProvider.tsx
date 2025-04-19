@@ -1,5 +1,6 @@
 'use client';
 
+import { SonicLoader } from '@/components/sonic-loader';
 import { useAuth } from '@/contexts/auth-context';
 
 export default function DashboardProvider({
@@ -9,7 +10,7 @@ export default function DashboardProvider({
 }) {
   const { user } = useAuth();
   if (!user) {
-    return null;
+    return <SonicLoader />;
   }
   return children;
 }
