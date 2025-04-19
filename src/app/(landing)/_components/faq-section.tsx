@@ -18,23 +18,14 @@ export default function FaqAccordion() {
 
   const faqs: FaqItem[] = [
     {
-      question: <div>Why does <b>$SOAL</b> increase focus?</div>,
+      question: <div>What is SonicSoal?</div>,
       answer: (
         <div className="space-y-4 text-muted-foreground">
           <p>
-            <b>$SOAL</b> uses scientifically designed audio frequencies that synchronize with your brainwaves to enhance neural coherence and optimize cognitive function.
+            SonicSoal is a frequency-optimized audio platform designed to enhance focus, clarity, and
+            spiritual alignment through personalized sound experiences powered by your birth data, daily
+            mood, and intention.
           </p>
-          <p>
-            In a way, you could think of <b>$SOAL</b> as neural entrainment 2.0. We took the concept behind traditional audio therapies and applied an updated understanding of neuroscience and auditory processing to create a more effective and powerful solution.``
-          </p>
-          <p>Some core mechanisms:</p>
-          <ul className="list-disc pl-6 space-y-2">
-            <li><b>$SOAL</b> impacts the prefrontal cortex which is where all your thinking and creativity comes from</li>
-            <li>Our frequencies help reduce distracting thoughts by stabilizing neural oscillations</li>
-            <li>The audio patterns create an optimal environment for sustained attention</li>
-            <li>Background noise and distractions are effectively masked by our carefully designed soundscapes</li>
-          </ul>
-          <p>Most importantly, <b>$SOAL</b> uses many methods to make our audio work, not just a single technique!</p>
         </div>
       ),
     },
@@ -43,94 +34,118 @@ export default function FaqAccordion() {
       answer: (
         <div className="space-y-4 text-muted-foreground">
           <p>
-            <b>$SOAL</b> is not binaural beats. There are some similarities, but it&apos;s important to remember that binaural beats were first discovered in 1839, popularized in the 1970&apos;s and haven&apos;t really changed since.
+            No. While SonicSoal may use elements of frequency entrainment, it’s not just binaural beats.
+            Our audio is dynamic, intention-based, and personalized using tools like AstroSync™ and Inner
+            Archive™ readings.
           </p>
-          <p>
-            In a way, you could think of <b>$SOAL</b> as binaural beats 2.0. We took the concept behind binaural beats and applied an updated understanding of neuroscience and auditory processing to create a more effective and powerful solution.
-          </p>
-          <p>Some core differences:</p>
-          <ul className="list-disc pl-6 space-y-2">
-            <li>Binaural beats primarily impact the lower brain which is not where thinking or creativity occurs.</li>
-            <li><b>$SOAL</b> impacts the prefrontal cortex which is where all your thinking and creativity comes from</li>
-            <li>Binaural beats require both ears to be free of hearing damage and high-quality headphones to be on.</li>
-            <li><b>$SOAL</b> works with one or two ears, does not require headphones, and is not dependent on your ability to hear certain frequencies.</li>
-          </ul>
-          <p>Most importantly, <b>$SOAL</b> uses many methods to make our audio work, unlike binaural beats which is just one technique!</p>
         </div>
       ),
     },
     {
-      question: "How large are your scientific studies?",
+      question: "How does SonicSoal increase focus?",
       answer: (
         <div className="space-y-4 text-muted-foreground">
           <p>
-            Our research is based on multiple studies with varying sample sizes, designed to validate different aspects of our technology.
+            By aligning frequencies with your personal energetic profile, SonicSoal tunes your mental and
+            emotional state for clarity, flow, and reduced cognitive clutter. Users often report entering “flow”
+            states within minutes.
           </p>
-          <p>Our primary efficacy studies included:</p>
-          <ul className="list-disc pl-6 space-y-2">
-            <li>A controlled laboratory study with 34 participants measuring cognitive performance</li>
-            <li>A field study with over 150 regular users tracking productivity metrics over time</li>
-            <li>EEG measurements from 28 subjects showing neural entrainment effects</li>
-            <li>A comparative analysis against traditional focus-enhancing audio with 45 participants</li>
-          </ul>
-          <p>We continue to expand our research program and collaborate with neuroscience researchers to further validate and improve our technology.</p>
         </div>
       ),
     },
     {
-      question: "Is this only for people with ADHD?",
+      question: <div>What is <b>$SOAL</b> and how is it used?</div>,
       answer: (
         <div className="space-y-4 text-muted-foreground">
           <p>
-            No, <b>$SOAL</b> is designed for everyone who wants to improve their focus, relaxation, or sleep quality, regardless of whether they have ADHD or not.
+            <b>$SOAL</b>  is the utility token used within the SonicSoal ecosystem. It’s used to unlock premium
+            rituals, personalized content, and eventually contribute to your SoulPrint™ progression and
+            Inner Archive™ access.
           </p>
-          <p>
-            While many users with ADHD report significant benefits from our sessions, our technology works with the fundamental neural mechanisms that all humans share.
-          </p>
-          <p><b>$SOAL</b> helps with:</p>
-          <ul className="list-disc pl-6 space-y-2">
-            <li>General focus and productivity for anyone doing knowledge work</li>
-            <li>Creative flow states for artists, writers, and other creative professionals</li>
-            <li>Relaxation and stress reduction for anyone experiencing tension</li>
-            <li>Sleep quality improvement for those with occasional sleep difficulties</li>
-          </ul>
-          <p>Our diverse user base includes students, professionals, creatives, and anyone looking to optimize their mental state for specific activities.</p>
         </div>
       ),
     },
     {
-      question: "Why is this better for focus than normal music?",
+      question: "Do I need to have ADHD to use SonicSoal?",
       answer: (
         <div className="space-y-4 text-muted-foreground">
           <p>
-            Unlike regular music, <b>$SOAL</b> is specifically engineered to enhance cognitive function rather than just provide entertainment.
+            Not at all. While it can support neurodivergent focus needs, SonicSoal is built for anyone
+            seeking better mental clarity, emotional balance, or spiritual insight through sound.
           </p>
-          <p>Key differences include:</p>
-          <ul className="list-disc pl-6 space-y-2">
-            <li>Regular music often contains lyrics, which compete for your verbal processing resources</li>
-            <li>Music typically has dynamic changes in tempo, volume, and emotional tone that can be distracting</li>
-            <li><b>$SOAL</b> uses precise frequencies and patterns that work with your brain&apos;s natural rhythms</li>
-            <li>Our audio maintains consistent properties that create an optimal environment for sustained focus</li>
-            <li>Regular music is designed to engage your emotions; <b>$SOAL</b> is designed to optimize your cognitive state</li>
-          </ul>
-          <p>While some instrumental music can be helpful for focus, it&apos;s not specifically designed for cognitive enhancement the way <b>$SOAL</b> is.</p>
         </div>
       ),
     },
     {
-      question: "How do I make $SOAL work best for me?",
+      question: "What makes this better than normal music or meditation apps?",
       answer: (
         <div className="space-y-4 text-muted-foreground">
-          <p>To get the most out of <b>$SOAL</b>, we recommend following these best practices:</p>
-          <ul className="list-disc pl-6 space-y-2">
-            <li>Use headphones when possible for the most immersive experience</li>
-            <li>Start with 15–30 minute sessions and gradually increase as needed</li>
-            <li>Match the session type to your activity (focus for work, relax for unwinding, etc.)</li>
-            <li>Set a clear intention for what you want to accomplish during your session</li>
-            <li>Use <b>$SOAL</b> consistently to train your brain to respond more quickly to the frequencies</li>
-            <li>Experiment with different volume levels to find what works best for you</li>
-          </ul>
-          <p>Everyone&apos;s brain is unique, so don&apos;t be afraid to experiment with different session types and settings to find your optimal configuration.</p>
+          <p>SonicSoal goes beyond generic soundtracks. It personalizes audio in real time based on your
+            birth chart, mood, and intentions. It’s part sound healing, part ritual technology.</p>
+        </div>
+      ),
+    },
+    {
+      question: "How large are your studies or user base?",
+      answer: (
+        <div className="space-y-4 text-muted-foreground">
+          <p>We’re currently building our first wave of data from early users and community testers. The
+            platform is evolving through real-time feedback and research.</p>
+        </div>
+      ),
+    },
+    {
+      question: "How do I make SonicSoal work best for me?",
+      answer: (
+        <div className="space-y-4 text-muted-foreground">
+          <p>Consistency is key. Use it daily with intention, track your experience in the app, and engage with
+            the Inner Archive™ to deepen your transformation.</p>
+        </div>
+      ),
+    },
+    {
+      question: <div>Can I use SonicSoal without <b>$SOAL</b> tokens? </div>,
+      answer: (
+        <div className="space-y-4 text-muted-foreground">
+          <p>Yes — basic features are free. However, <b>$SOAL</b> unlocks deeper tools, personalized sessions,
+            and community-based rewards.</p>
+        </div>
+      ),
+    },
+    {
+      question: "Where can I leave feedback or share my experience?",
+      answer: (
+        <div className="space-y-4 text-muted-foreground">
+          <p>We love hearing from you. You can share feedback directly inside the app or join our community
+            channels to contribute to the evolution of SonicSoal. Your input helps shape future updates.</p>
+        </div>
+      ),
+    },
+    {
+      question: "Is my personal data and birth information secure?",
+      answer: (
+        <div className="space-y-4 text-muted-foreground">
+          <p>Yes. We take data security seriously. Your birth data and personal inputs are encrypted and
+            never sold. They’re used solely to generate your unique sound experience within SonicSoal.</p>
+        </div>
+      ),
+    },
+    {
+      question: "Is it safe to use SonicSoal while driving?",
+      answer: (
+        <div className="space-y-4 text-muted-foreground">
+          <p>Use caution. Some frequencies are deeply immersive or meditative and may reduce alertness.
+            We recommend using “Focus Mode” only while stationary or during light tasks, not while driving
+            or operating machinery.</p>
+        </div>
+      ),
+    },
+    {
+      question: "Should I stay hydrated while using it?",
+      answer: (
+        <div className="space-y-4 text-muted-foreground">
+          <p>Yes. Hydration supports the body’s natural energy flow and can enhance the effects of
+            SonicSoal’s sound alignment. We recommend drinking water before and after longer sessions.</p>
         </div>
       ),
     },
