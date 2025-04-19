@@ -35,6 +35,7 @@ const buttonVariants = {
   hover: { scale: 1.03 },
 }
 
+
 // Add a new type for repeat mode
 type RepeatMode = "off" | "one" | "all"
 
