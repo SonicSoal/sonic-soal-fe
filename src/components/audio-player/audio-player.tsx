@@ -46,6 +46,8 @@ interface AudioPlayerProps {
   onTrackChange?: (track: AudioTrack, index: number) => void
   onPlay?: () => void
   onPause?: () => void
+  onEnded?: () => void
+  ref? : React.Ref<HTMLAudioElement>
 }
 
 export function AudioPlayer({
@@ -55,6 +57,7 @@ export function AudioPlayer({
   className,
   onTrackChange,
   onPlay,
+  onEnded,
   onPause,
 }: AudioPlayerProps) {
   const [isClient, setIsClient] = useState(false)
@@ -410,6 +413,8 @@ export function AudioPlayer({
         ref={audioRef}
         src={tracks[currentTrack].url}
         onEnded={() => {
+
+          onEnded?.();
           if (repeatMode === "one") {
             // Repeat the current track
             if (audioRef.current) {
