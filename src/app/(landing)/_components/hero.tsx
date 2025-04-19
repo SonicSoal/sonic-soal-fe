@@ -75,7 +75,7 @@ export function Hero() {
             animate={isLoaded ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.7, delay: 0.3, ease: "easeOut" }}
           >
-            <span className="bg-gradient-to-r from-[#14D9C4] via-[#5CB8FF] to-[#A46EFF] text-transparent bg-clip-text">
+            <span className="bg-gradient-to-r from-primary via-[#5CB8FF] to-secondary text-transparent bg-clip-text">
               Experience SonicSoal Sessions
             </span>
           </motion.h1>
@@ -111,11 +111,11 @@ export function Hero() {
           >
             <Button
               size="lg"
-              className="relative h-14 px-8 overflow-hidden rounded-full bg-gradient-to-r from-[#14D9C4] to-[#A46EFF] text-white font-medium shadow-xl hover:shadow-[0_8px_25px_-5px_rgba(20,217,196,0.3)] transition-all duration-300 border-0 group"
+              className="relative h-12 px-8 overflow-hidden rounded-full bg-gradient-to-r from-primary to-secondary font-medium shadow-xl hover:shadow-[0_8px_25px_-5px_rgba(20,217,196,0.3)] transition-all duration-300 border-0 group"
               asChild
             >
               <Link href="/sign-in" passHref>
-                <span className="absolute inset-0 w-full h-full bg-gradient-to-r from-[#14D9C4] to-[#A46EFF] opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-md"></span>
+                <span className="absolute inset-0 w-full h-full bg-gradient-to-r from-primary to-secondary opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-md"></span>
                 <span className="absolute inset-0 w-full h-full bg-black opacity-0 group-hover:opacity-10 transition-opacity duration-300"></span>
                 <span className="relative flex items-center justify-center z-10">
                   Try for Free
@@ -142,17 +142,12 @@ export function Hero() {
             </Button>
             <Button
               size="lg"
-              className="relative h-14 px-8 overflow-hidden rounded-full bg-transparent backdrop-blur-sm text-foreground font-medium border border-white/10 hover:border-white/20 shadow-sm hover:shadow-lg hover:shadow-primary/5 transition-all duration-300 group"
+              variant="outline"
+              className="relative h-12 px-8 overflow-hidden rounded-full bg-transparent backdrop-blur-sm text-foreground font-medium border border-white/10  shadow-sm hover:shadow-lg transition-all duration-300 group"
               asChild
             >
               <Link href="#how-it-works">
-                <span className="absolute inset-0 bg-gradient-to-r from-[#14D9C4]/5 to-[#A46EFF]/5 opacity-0 group-hover:opacity-100 transition-all duration-500"></span>
-                <span className="relative flex items-center justify-center z-10">
-                  <span className="bg-gradient-to-r from-[#14D9C4] to-[#A46EFF] bg-clip-text text-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 absolute">
-                    Learn More
-                  </span>
-                  <span className="group-hover:opacity-0 transition-opacity duration-300">Learn More</span>
-                </span>
+                Learn More
               </Link>
             </Button>
           </motion.div>
