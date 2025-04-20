@@ -1,4 +1,11 @@
-import { Trophy, Star, Clock, Sparkles, Goal } from 'lucide-react';
+import {
+  Trophy,
+  Star,
+  Clock,
+  Sparkles,
+  Goal,
+  AudioWaveformIcon as WaveformIcon,
+} from 'lucide-react';
 
 export function EarnSoal() {
   return (
@@ -39,7 +46,10 @@ export function EarnSoal() {
               {/* Token - reduced size but still prominent */}
               <div className="absolute inset-[35%] bg-gradient-to-r from-primary/10 via-primary/20 to-primary/20 rounded-full flex items-center justify-center shadow-xl border-4 border-primary-foreground/10">
                 <div className="text-2xl font-bold text-violet-900 dark:text-primary-foreground">
-                  $SOAL
+                  <WaveformIcon
+                    size={48}
+                    className="text-primary relative z-10"
+                  />
                 </div>
               </div>
 

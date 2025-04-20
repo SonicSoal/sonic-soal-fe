@@ -11,8 +11,10 @@ import {
   DialogTitle,
   DialogFooter,
 } from '@/components/ui/dialog';
-import { delay } from '@/lib/utils';
 import { DialogOverlay } from '@/components/ui/dialog';
+import { db } from '@/lib/firebase';
+import { collection, addDoc, Timestamp, serverTimestamp } from 'firebase/firestore';
+import { toast } from "sonner";
 
 interface FeedbackOption {
   id: number;
@@ -43,13 +45,27 @@ export default function FeedbackModal({
   const [isSubmitted, setIsSubmitted] = useState(false);
 
   const handleSubmit = async () => {
-    // Here you would typically send the feedback to your backend
-    console.log({ selectedOption, comment });
+    if (!selectedOption) return;
 
     setIsLoading(true);
-    await delay(3000);
-    setIsLoading(false);
-    setIsSubmitted(true);
+    try {
+      await addDoc(collection(db, 'feedback'), {
+        mood: feedbackOptions.find(opt => opt.id === selectedOption)?.label,
+        moodId: selectedOption,
+        comment: comment || null,
+        createdAt: serverTimestamp() as Timestamp,
+      });
+      setIsSubmitted(true);
+    } catch {
+      toast.error(
+        'Error submitting feedback. Please try again later.',
+        {
+          description: 'We encountered an error while submitting your feedback. Please try again later.',
+        }
+      );
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   return (
@@ -67,11 +83,9 @@ export default function FeedbackModal({
       <DialogOverlay className="bg-background/5 backdrop-blur-sm data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0" />
       <DialogContent
         onEscapeKeyDown={(e) => {
-          // Prevent closing with Escape key during submission
           if (isSubmitted) e.preventDefault();
         }}
         onInteractOutside={(e) => {
-          // Prevent closing when clicking outside during submission
           if (isSubmitted) e.preventDefault();
         }}
         className="border border-primary/20 shadow-lg shadow-primary/10"

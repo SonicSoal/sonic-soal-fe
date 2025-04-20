@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 'use client';
 
 import { useState } from 'react';
@@ -12,14 +13,10 @@ export function Header() {
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-lg border-b">
-      <div className="container mx-auto px-4 py-4 flex items-center justify-between">
-        <Link href="/" className="flex items-center">
-          <div className="h-10 w-10 rounded-full bg-gradient-to-r from-primary to-primary/90 flex items-center justify-center text-primary-foreground font-bold text-xl shadow-md">
-            S
-          </div>
-          <span className="ml-2 text-xl font-bold bg-gradient-to-r from-primary to-secondary text-transparent bg-clip-text">
-            SonicSoal
-          </span>
+      <div className=" mx-auto px-4 py-4 flex items-center justify-between max-w-[1500px]">
+        <Link href="/" className="flex items-center gap-2">
+          <img src="/sonic-soal.svg" className="w-9 h-9 lg:h-7 lg:w-7" alt="" />
+          <img src="/SonicSoal.svg" className="w-35 max-lg:hidden" alt="" />
         </Link>
 
         {/* Desktop Navigation */}

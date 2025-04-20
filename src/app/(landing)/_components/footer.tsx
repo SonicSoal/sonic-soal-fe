@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import Link from 'next/link';
 import { Facebook, Twitter, Instagram, Youtube } from 'lucide-react';
 
@@ -13,13 +14,9 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* Logo & Info */}
           <div className="md:col-span-1">
-            <Link href="/" className="flex items-center mb-4">
-              <div className="h-8 w-8 rounded-full bg-primary flex items-center justify-center text-[#0B0C10] font-bold text-sm">
-                S
-              </div>
-              <span className="ml-2 text-lg font-bold bg-gradient-to-r from-primary to-secondary text-transparent bg-clip-text">
-                SonicSoal
-              </span>
+            <Link href="/" className="flex items-center mb-4 gap-2">
+              <img src="/sonic-soal.svg" className="w-5 h-5" alt="" />
+              <img src="/SonicSoal.svg" className="w-30 " alt="" />
             </Link>
             <p className="text-muted-foreground text-sm mb-4">
               SonicSoal delivers frequency-optimized audio to enhance focus,

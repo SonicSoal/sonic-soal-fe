@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 'use client';
 
 import * as React from 'react';
@@ -64,15 +65,13 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
     <Sidebar collapsible="icon" {...props}>
       <SidebarHeader>
         <div
-          className={cn('flex items-center gap-2', {
-            'justify-center': !open,
+          className={cn('flex items-center gap-2 pt-1', {
+            'justify-center pt-2': !open,
           })}
         >
-          <AudioWaveformIcon className="h-6 w-6 text-primary" />
+          <img src="/sonic-soal.svg" className="h-6 w-6" alt="" />
           {open && (
-            <span className="font-semibold bg-gradient-to-r from-primary to-secondary text-2xl text-transparent bg-clip-text">
-              SonicSoal
-            </span>
+            <img src="/SonicSoal.svg" className="w-32 " alt="" />
           )}
         </div>
       </SidebarHeader>

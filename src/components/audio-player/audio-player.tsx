@@ -522,40 +522,8 @@ export function AudioPlayer({
 
         {/* Player Controls - Professional layout */}
         <div className="relative">
-          {/* Playback mode controls (top row) */}
-          <motion.div variants={itemVariants} className="flex items-center justify-center gap-6 mb-4">
-            <motion.button
-              variants={buttonVariants}
-              initial="initial"
-              whileHover="hover"
-              whileTap="tap"
-              onClick={toggleShuffle}
-              className={cn("text-muted-foreground hover:text-primary transition-colors", shuffle && "text-primary")}
-              aria-label={shuffle ? "Shuffle on" : "Shuffle off"}
-              title={shuffle ? "Shuffle on" : "Shuffle off"}
-            >
-              <Shuffle size={18} />
-            </motion.button>
-
-            <motion.button
-              variants={buttonVariants}
-              initial="initial"
-              whileHover="hover"
-              whileTap="tap"
-              onClick={toggleRepeatMode}
-              className={cn(
-                "text-muted-foreground hover:text-primary transition-colors",
-                repeatMode !== "off" && "text-primary",
-              )}
-              aria-label={`Repeat mode: ${repeatMode}`}
-              title={repeatMode === "off" ? "Repeat off" : repeatMode === "all" ? "Repeat all" : "Repeat one"}
-            >
-              {repeatMode === "one" ? <Repeat1 size={18} /> : <Repeat size={18} />}
-            </motion.button>
-          </motion.div>
-
           {/* Main playback controls (middle row) */}
-          <motion.div variants={itemVariants} className="flex items-center justify-center gap-8 sm:gap-12 mb-4">
+          <motion.div variants={itemVariants} className="flex items-center justify-center gap-6 sm:gap-8 mb-3">
             <motion.button
               variants={buttonVariants}
               initial="initial"
@@ -572,11 +540,38 @@ export function AudioPlayer({
               initial="initial"
               whileHover="hover"
               whileTap="tap"
+              onClick={toggleShuffle}
+              className={cn("text-muted-foreground hover:text-primary transition-colors", shuffle && "text-primary")}
+              aria-label={shuffle ? "Shuffle on" : "Shuffle off"}
+              title={shuffle ? "Shuffle on" : "Shuffle off"}
+            >
+              <Shuffle size={18} />
+            </motion.button>
+            <motion.button
+              variants={buttonVariants}
+              initial="initial"
+              whileHover="hover"
+              whileTap="tap"
               onClick={handlePlayPause}
               className="bg-primary text-primary-foreground w-12 h-12 sm:w-14 sm:h-14 rounded-full flex items-center justify-center transition-colors shadow-sm"
               aria-label={isPlaying ? "Pause" : "Play"}
             >
               {isPlaying ? <Pause size={isMobile ? 20 : 24} /> : <Play size={isMobile ? 20 : 24} className="ml-1" />}
+            </motion.button>
+            <motion.button
+              variants={buttonVariants}
+              initial="initial"
+              whileHover="hover"
+              whileTap="tap"
+              onClick={toggleRepeatMode}
+              className={cn(
+                "text-muted-foreground hover:text-primary transition-colors",
+                repeatMode !== "off" && "text-primary",
+              )}
+              aria-label={`Repeat mode: ${repeatMode}`}
+              title={repeatMode === "off" ? "Repeat off" : repeatMode === "all" ? "Repeat all" : "Repeat one"}
+            >
+              {repeatMode === "one" ? <Repeat1 size={18} /> : <Repeat size={18} />}
             </motion.button>
             <motion.button
               variants={buttonVariants}

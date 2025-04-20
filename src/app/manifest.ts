@@ -2,7 +2,7 @@ import type { MetadataRoute } from 'next'
 
 export default function manifest(): MetadataRoute.Manifest {
   return {
-    name: "Sonic Soal",
+    name: "SonicSoal",
     short_name: "SonicSoal",
     description: "Experience the power of frequency-optimized audio designed to enhance focus, relaxation, and spiritual alignment.",
     start_url: '/',
