@@ -17,7 +17,7 @@ export function Header() {
           <div className="h-10 w-10 rounded-full bg-gradient-to-r from-primary to-primary/90 flex items-center justify-center text-primary-foreground font-bold text-xl shadow-md">
             S
           </div>
-          <span className="ml-2 text-xl font-bold bg-gradient-to-r from-[#14D9C4] to-[#A46EFF] text-transparent bg-clip-text">
+          <span className="ml-2 text-xl font-bold bg-gradient-to-r from-primary to-secondary text-transparent bg-clip-text">
             SonicSoal
           </span>
         </Link>

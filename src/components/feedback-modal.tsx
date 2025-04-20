@@ -89,7 +89,7 @@ export default function FeedbackModal({
               <SmilePlus className="text-primary relative z-10 h-8 w-8" />
             </div>
           </div>
-          <DialogTitle className="text-center text-xl font-bold bg-gradient-to-r from-[#14D9C4] to-[#A46EFF] text-transparent bg-clip-text">
+          <DialogTitle className="text-center text-xl font-bold bg-gradient-to-r from-primary to-secondary text-transparent bg-clip-text">
             How did you feel after this session?
           </DialogTitle>
         </DialogHeader>

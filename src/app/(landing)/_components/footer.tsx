@@ -14,10 +14,10 @@ export function Footer() {
           {/* Logo & Info */}
           <div className="md:col-span-1">
             <Link href="/" className="flex items-center mb-4">
-              <div className="h-8 w-8 rounded-full bg-[#14D9C4] flex items-center justify-center text-[#0B0C10] font-bold text-sm">
+              <div className="h-8 w-8 rounded-full bg-primary flex items-center justify-center text-[#0B0C10] font-bold text-sm">
                 S
               </div>
-              <span className="ml-2 text-lg font-bold bg-gradient-to-r from-[#14D9C4] to-[#A46EFF] text-transparent bg-clip-text">
+              <span className="ml-2 text-lg font-bold bg-gradient-to-r from-primary to-secondary text-transparent bg-clip-text">
                 SonicSoal
               </span>
             </Link>

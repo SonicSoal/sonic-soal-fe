@@ -57,7 +57,7 @@ export function SigninForm() {
               />
             </div>
           </div>
-          <CardTitle className="text-2xl font-bold bg-gradient-to-r from-[#14D9C4] to-[#A46EFF] text-transparent bg-clip-text">
+          <CardTitle className="text-2xl font-bold bg-gradient-to-r from-primary to-secondary text-transparent bg-clip-text">
             Welcome Back
           </CardTitle>
           <CardDescription>

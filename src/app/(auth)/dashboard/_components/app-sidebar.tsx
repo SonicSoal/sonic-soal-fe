@@ -30,28 +30,28 @@ const data = {
   },
   navMain: [
     {
-      title: "Dashboard",
-      href: "/dashboard",
+      title: 'Dashboard',
+      href: '/dashboard',
       icon: <LayoutDashboardIcon className="h-4 w-4" />,
     },
     {
-      title: "My Sessions",
-      href: "/dashboard/sessions",
+      title: 'My Sessions',
+      href: '/dashboard/sessions',
       icon: <AudioWaveformIcon className="h-4 w-4" />,
     },
     {
-      title: "Session Feedback",
-      href: "/dashboard/feedback",
+      title: 'Session Feedback',
+      href: '/dashboard/feedback',
       icon: <MessageCircleIcon className="h-4 w-4" />,
     },
     {
-      title: "Recently Played",
-      href: "/dashboard/history",
+      title: 'Recently Played',
+      href: '/dashboard/history',
       icon: <ClockIcon className="h-4 w-4" />,
     },
     {
-      title: "Coming Soon",
-      href: "/dashboard/coming-soon",
+      title: 'Coming Soon',
+      href: '/dashboard/coming-soon',
       icon: <SparklesIcon className="h-4 w-4" />,
     },
   ],
@@ -70,7 +70,7 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
         >
           <AudioWaveformIcon className="h-6 w-6 text-primary" />
           {open && (
-            <span className="font-semibold bg-gradient-to-r from-[#14D9C4] to-[#A46EFF] text-2xl text-transparent bg-clip-text">
+            <span className="font-semibold bg-gradient-to-r from-primary to-secondary text-2xl text-transparent bg-clip-text">
               SonicSoal
             </span>
           )}
@@ -80,7 +80,7 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
         <NavMain items={data.navMain} />
       </SidebarContent>
       <SidebarFooter>
-        <NavUser  />
+        <NavUser />
       </SidebarFooter>
     </Sidebar>
   );

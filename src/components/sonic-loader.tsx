@@ -61,7 +61,7 @@ export function SonicLoader({
             {/* Waveform icon with pulsing effect */}
             <div className="relative mb-8">
               <motion.div
-                className="absolute inset-0 bg-gradient-to-r from-[#14D9C4] to-[#A46EFF] rounded-full blur-lg"
+                className="absolute inset-0 bg-gradient-to-r from-primary to-secondary rounded-full blur-lg"
                 animate={{
                   scale: [1, 1.2, 1],
                   opacity: [0.5, 0.8, 0.5],
@@ -82,7 +82,7 @@ export function SonicLoader({
               {[...Array(5)].map((_, i) => (
                 <motion.div
                   key={i}
-                  className="w-1 bg-gradient-to-t from-[#14D9C4] to-[#A46EFF] rounded-full"
+                  className="w-1 bg-gradient-to-t from-primary to-secondary rounded-full"
                   initial={{ height: 15 }}
                   animate={{
                     height: [15, 30, 15],
@@ -107,7 +107,7 @@ export function SonicLoader({
 
             {/* Loading text */}
             <motion.p
-              className="text-xl font-medium bg-gradient-to-r from-[#14D9C4] to-[#A46EFF] text-transparent bg-clip-text"
+              className="text-xl font-medium bg-gradient-to-r from-primary to-secondary text-transparent bg-clip-text"
               animate={{
                 opacity: [0.7, 1, 0.7],
               }}

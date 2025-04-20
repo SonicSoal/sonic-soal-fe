@@ -11,7 +11,7 @@ export default function DashboardPage() {
     <div>
      <div className="flex items-center space-x-4 mb-6">
         <AudioWaveformIcon className="w-8 h-8 text-primary" />
-        <h1 className="bg-gradient-to-r from-[#14D9C4] to-[#A46EFF] text-transparent bg-clip-text text-3xl">
+        <h1 className="bg-gradient-to-r from-primary to-secondary text-transparent bg-clip-text text-3xl">
           Welcome to SonicSoal
         </h1>
       </div>

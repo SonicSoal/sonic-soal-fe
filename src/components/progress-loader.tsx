@@ -10,7 +10,7 @@ export default function ProgressLoader({
   return (
     <ProgressProvider
       height="2px"
-      color="#b270ff"
+      color="#8326ff"
       options={{ showSpinner: true }}
       shallowRouting
       delay={70}

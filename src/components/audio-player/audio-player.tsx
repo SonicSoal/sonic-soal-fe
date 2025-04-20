@@ -161,8 +161,8 @@ export function AudioPlayer({
         let gradient
         if (isActive) {
           gradient = ctx.createLinearGradient(0, y, 0, y + height)
-          gradient.addColorStop(0, "rgba(20, 217, 196, 0.8)")
-          gradient.addColorStop(1, "rgba(20, 217, 196, 0.4)")
+          gradient.addColorStop(0, "rgba(131, 38, 255, 0.8)")
+          gradient.addColorStop(1, "rgba(23, 177, 204, 0.9)")
         } else {
           gradient = ctx.createLinearGradient(0, y, 0, y + height)
           gradient.addColorStop(0, "rgba(150, 150, 150, 0.3)")
@@ -192,7 +192,7 @@ export function AudioPlayer({
       ctx.beginPath()
       ctx.moveTo(playheadX, 0)
       ctx.lineTo(playheadX, rect.height)
-      ctx.strokeStyle = "rgba(20, 217, 196, 0.5)"
+      ctx.strokeStyle = "rgba(23, 177, 204, 0.4)"
       ctx.lineWidth = 2
       ctx.stroke()
 
@@ -458,8 +458,9 @@ export function AudioPlayer({
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               transition={{ duration: 0.15 }}
-              className="text-xl sm:text-2xl font-bold text-foreground mb-1"
+              className="text-xl sm:text-2xl font-bold text-foreground mb-1 text-primary"
             >
+             
               {tracks[currentTrack].title}
             </motion.h3>
           </AnimatePresence>
