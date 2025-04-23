@@ -37,6 +37,7 @@ export const metadata: Metadata = {
     //     alt: 'SonicSoal - Feel the Frequency. Align the Soul.',
     //   },
     // ],
+    
   },
 
   twitter: {
