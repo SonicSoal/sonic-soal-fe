@@ -20,12 +20,12 @@ export function EarnSoal() {
       <div className="container mx-auto relative z-10">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-5xl font-bold mb-6 text-foreground">
-            How to Earn <span className="text-secondary">$SOAL</span> Tokens
+            How to Earn <span className="text-secondary">$LUV</span> Tokens
           </h2>
           <p className="text-muted-foreground max-w-3xl mx-auto">
             SonicSoal is your gateway to personalized frequency sessions that
             boost your vibe—mentally, emotionally, and energetically. To reward
-            your alignment journey, we&apos;ve created <b>$SOAL</b>, the
+            your alignment journey, we&apos;ve created <b>$LUV</b>, the
             official SonicSoal token.
           </p>
         </div>
@@ -83,7 +83,7 @@ export function EarnSoal() {
                     Daily Sessions
                   </h4>
                   <p className="text-muted-foreground">
-                    Earn <b>$SOAL</b> for completing SonicSoal frequency
+                    Earn <b>$LUV</b> for completing SonicSoal frequency
                     sessions each day. The more consistent you are, the more you
                     build.
                   </p>
@@ -103,7 +103,7 @@ export function EarnSoal() {
                   <p className="text-muted-foreground">
                     Keep your momentum going—earn bonus tokens for multi-day
                     streaks and reach key vibration benchmarks for additional
-                    <b> $SOAL</b> rewards.
+                    <b> $LUV</b> rewards.
                   </p>
                 </div>
               </div>
@@ -120,7 +120,7 @@ export function EarnSoal() {
                   </h4>
                   <p className="text-muted-foreground">
                     Reach key vibration benchmarks (like 3-day resets, 7-day
-                    activations, etc.) and unlock <b>$SOAL</b> rewards.
+                    activations, etc.) and unlock <b>$LUV</b> rewards.
                   </p>
                 </div>
               </div>
@@ -155,7 +155,7 @@ export function EarnSoal() {
                     ⁠Unlock & Access
                   </h4>
                   <p className="text-muted-foreground text-base">
-                    Use your earned <b>$SOAL</b> to unlock premium sessions,
+                    Use your earned <b>$LUV</b> to unlock premium sessions,
                     higher-tier frequency blends, and upcoming features like:
                   </p>
                   <ul className="text-muted-foreground text-sm mt-2 space-y-1 list-disc list-inside">

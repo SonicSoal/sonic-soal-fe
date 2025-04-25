@@ -31,7 +31,7 @@ export default function PrivacyPolicyPage() {
           <ul className="list-disc pl-6">
             <li>Deliver tailored audio sessions</li>
             <li>Improve platform accuracy and quality</li>
-            <li>Enable future features like $SOAL reward tracking</li>
+            <li>Enable future features like $LUV reward tracking</li>
           </ul>
           <p>We do not sell your data or use it for third-party advertising.</p>
         </section>

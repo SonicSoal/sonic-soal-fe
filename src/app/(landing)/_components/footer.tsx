@@ -75,7 +75,7 @@ export function Footer() {
                   href="#earn"
                   className="text-muted-foreground hover:text-primary text-sm"
                 >
-                  Earn $SOAL
+                  Earn $LUV
                 </Link>
               </li>
             </ul>

@@ -76,9 +76,9 @@ export default function TermsOfServicePage() {
 
           {/* Section 5 */}
           <section>
-            <h2 className="text-2xl font-semibold">5. $SOAL Utility Token</h2>
+            <h2 className="text-2xl font-semibold">5. $LUV Utility Token</h2>
             <p>
-              $SOAL is a non-tradable utility token used to unlock features
+              $LUV is a non-tradable utility token used to unlock features
               within the SonicSoal platform. It holds no monetary value and
               cannot be exchanged outside the platform. Future changes to token
               functionality will be disclosed transparently.

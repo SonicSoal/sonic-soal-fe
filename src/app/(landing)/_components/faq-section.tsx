@@ -54,11 +54,11 @@ export default function FaqAccordion() {
       ),
     },
     {
-      question: <div>What is <b>$SOAL</b> and how is it used?</div>,
+      question: <div>What is <b>$LUV</b> and how is it used?</div>,
       answer: (
         <div className="space-y-4 text-muted-foreground">
           <p>
-            <b>$SOAL</b>  is the utility token used within the SonicSoal ecosystem. It’s used to unlock premium
+            <b>$LUV</b>  is the utility token used within the SonicSoal ecosystem. It’s used to unlock premium
             rituals, personalized content, and eventually contribute to your SoulPrint™ progression and
             Inner Archive™ access.
           </p>
@@ -104,10 +104,10 @@ export default function FaqAccordion() {
       ),
     },
     {
-      question: <div>Can I use SonicSoal without <b>$SOAL</b> tokens? </div>,
+      question: <div>Can I use SonicSoal without <b>$LUV</b> tokens? </div>,
       answer: (
         <div className="space-y-4 text-muted-foreground">
-          <p>Yes — basic features are free. However, <b>$SOAL</b> unlocks deeper tools, personalized sessions,
+          <p>Yes — basic features are free. However, <b>$LUV</b> unlocks deeper tools, personalized sessions,
             and community-based rewards.</p>
         </div>
       ),
@@ -158,7 +158,7 @@ export default function FaqAccordion() {
           Frequently Asked Questions
         </h2>
         <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-          Everything you need to know about how <b>$SOAL</b> works and why it&apos;s different from other focus tools.
+          Everything you need to know about how <b>$LUV</b> works and why it&apos;s different from other focus tools.
         </p>
       </div>
       {faqs.map((faq, index) => (

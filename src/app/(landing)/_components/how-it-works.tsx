@@ -39,8 +39,8 @@ export function HowItWorks() {
     },
     {
       icon: <Coins className="h-8 w-8 text-primary" />,
-      title: "5. Earn $SOAL for Every Session",
-      description: "Each time you complete a session, maintain a streak, or hit a milestone, you earn $SOAL—our official token of alignment. You can redeem $SOAL for premium sessions, upgrades, or special access.",
+      title: "5. Earn $LUV for Every Session",
+      description: "Each time you complete a session, maintain a streak, or hit a milestone, you earn $LUV—our official token of alignment. You can redeem $LUV for premium sessions, upgrades, or special access.",
     }
   ]
 

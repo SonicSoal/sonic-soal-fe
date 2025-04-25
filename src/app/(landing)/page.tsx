@@ -7,6 +7,7 @@ import { VideoShowcase } from '@/app/(landing)/_components/video-showcase';
 import MusicSession from './_components/music-session';
 import { PreloadAudio } from '@/components/audio-player/preload-audio';
 import audioTracks from './data/audio-track-list';
+import { RequestCustomTone } from "./_components/request-custom-tone";
 
 export default function Home() {
   return (
@@ -14,6 +15,7 @@ export default function Home() {
       <main>
         <Hero />
         <MusicSession />
+        <RequestCustomTone/>
         <VideoShowcase />
         <HowItWorks />
         <EarnSoal />
