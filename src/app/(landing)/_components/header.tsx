@@ -37,7 +37,7 @@ export function Header() {
             href="#earn"
             className="text-muted-foreground hover:text-primary transition-colors"
           >
-            Earn $SOAL
+            Earn $LUV
           </Link>
           <ThemeToggle />
 
@@ -94,7 +94,7 @@ export function Header() {
               className="text-muted-foreground hover:text-primary transition-colors py-2"
               onClick={() => setIsMenuOpen(false)}
             >
-              Earn $SOAL
+              Earn $LUV
             </Link>
 
             <Link href="/sign-in" passHref>

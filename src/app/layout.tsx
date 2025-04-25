@@ -23,6 +23,7 @@ export const metadata: Metadata = {
   applicationName: 'SonicSoal',
   // authors: [{ name: 'SonicSoal' }],
   // creator: 'SonicSoal',
+  
   openGraph: {
     title: 'SonicSoal - Feel the Frequency. Align the Soul.',
     description:
