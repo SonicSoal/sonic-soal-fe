@@ -8,12 +8,15 @@ import MusicSession from './_components/music-session';
 import { PreloadAudio } from '@/components/audio-player/preload-audio';
 import audioTracks from './data/audio-track-list';
 import { RequestCustomTone } from "./_components/request-custom-tone";
+import {LuvTokenBanner} from './_components/luv-token-banner'
+
 
 export default function Home() {
   return (
     <>
       <main>
         <Hero />
+        <LuvTokenBanner />
         <MusicSession />
         <RequestCustomTone/>
         <VideoShowcase />

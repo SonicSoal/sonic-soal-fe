@@ -14,7 +14,7 @@ export function Hero() {
   }, [])
 
   return (
-    <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden">
+    <section className="relative min-h-[100vh] flex items-center justify-center overflow-hidden">
       {/* Background elements */}
       <div className="absolute inset-0 z-0">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120vw] h-[120vw] max-w-[1200px] max-h-[1200px] rounded-full bg-gradient-to-br from-primary/5 via-secondary/5 to-transparent blur-3xl opacity-60 dark:opacity-20"></div>
