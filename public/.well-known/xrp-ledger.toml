@@ -1,0 +1,23 @@
+[ORGANIZATION]
+name = "SonicSoal"
+website = "https://www.sonicsoal.com"
+
+[[ACCOUNTS]]
+address = "rsjaX5psaE6Tw2T8cY7vejLeVUdKLqNC2E"
+desc = "Issuer account."
+
+[[PRINCIPALS]]
+name = "Kyle"
+email = "SonicSoal@gmail.com"
+
+[[CURRENCIES]]
+code = "LUV"
+issuer = "rsjaX5psaE6Tw2T8cY7vejLeVUdKLqNC2E"
+display_decimals = 6
+total_supply = "12000000000"
+network = "main"
+desc = "Tap into immersive audio environments shaped to align your inner rhythm, soften mental noise, and guide you into elevated states of self-awareness."
+
+[CONTACT]
+email = "SonicSoal@gmail.com"
+website = "https://www.sonicsoal.com"
