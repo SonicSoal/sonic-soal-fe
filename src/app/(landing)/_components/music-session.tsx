@@ -4,20 +4,28 @@ import { AudioPlayer } from '@/components/audio-player/audio-player';
 import { motion } from 'framer-motion';
 import audioTracks from '../data/audio-track-list';
 import FeedbackModal from '@/components/feedback-modal';
-import { useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 
 export default function MusicSession() {
   const [openFeedbackModal, setOpenFeedbackModal] = useState(false);
-
+  const [countTrackChange, setCountTrackChange] = useState(0);
   const [startedSession, setStartedSession] = useState(false);
 
-  const sessionFeedback = () => {
+  const sessionFeedback = useCallback((time: number = 1000) => {
     if (startedSession) return;
     setStartedSession(true);
     setTimeout(() => {
       setOpenFeedbackModal(true);
-    }, 1000);
-  };
+    }, time);
+  }, [startedSession]);
+
+
+  useEffect(() => {
+    if (countTrackChange > 3) {
+      sessionFeedback(1000);
+    }
+  }, [countTrackChange, sessionFeedback]);
+
 
   return (
     <>
@@ -51,12 +59,11 @@ export default function MusicSession() {
 
           <AudioPlayer
             tracks={audioTracks}
-            onTrackChange={(track, index) => {
-              console.log(`Now playing: ${track.title} (index: ${index})`);
-              // setOpenFeedbackModal(true);
+            onTrackChange={() => {
+              setCountTrackChange(countTrackChange + 1);
             }}
             onEnded={() => {
-              sessionFeedback()
+              sessionFeedback(1000)
             }}
           />
         </div>
