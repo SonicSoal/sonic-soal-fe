@@ -49,7 +49,7 @@ export default function FeedbackModal({
 
     setIsLoading(true);
     try {
-      await addDoc(collection(db, 'feedback'), {
+      await addDoc(collection(db, 'feedbacks'), {
         mood: feedbackOptions.find(opt => opt.id === selectedOption)?.label,
         moodId: selectedOption,
         comment: comment || null,
