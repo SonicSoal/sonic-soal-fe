@@ -40,7 +40,7 @@ export function Header() {
             Earn $LUV
           </Link>
           <ThemeToggle />
-
+{/* 
           <Link href="/sign-in" passHref>
             <Button
               variant="outline"
@@ -49,9 +49,9 @@ export function Header() {
               <span className="absolute inset-0 w-0 bg-primary/10 transition-all duration-300 ease-out group-hover:w-full"></span>
               <span className="relative">Sign In</span>
             </Button>
-          </Link>
+          </Link> */}
 
-          <Link href="/sign-in" passHref>
+          <Link href="https://app.sonicsoal.com" passHref>
             <Button className="bg-primary hover:bg-primary/90 transition-all duration-300 relative overflow-hidden group shadow-md hover:shadow-lg">
               <span className="absolute inset-0 w-0 bg-white/10 transition-all duration-300 ease-out group-hover:w-full"></span>
               <span className="relative">Try for Free</span>
@@ -97,7 +97,7 @@ export function Header() {
               Earn $LUV
             </Link>
 
-            <Link href="/sign-in" passHref>
+            {/* <Link href="/sign-in" passHref>
               <Button
                 variant="outline"
                 className="w-full border-primary text-primary hover:bg-primary/10 hover:border-primary transition-all duration-300 relative overflow-hidden group"
@@ -106,9 +106,9 @@ export function Header() {
                 <span className="absolute inset-0 w-0 bg-primary/10 transition-all duration-300 ease-out group-hover:w-full"></span>
                 <span className="relative">Sign In</span>
               </Button>
-            </Link>
+            </Link> */}
 
-            <Link href="/sign-in" passHref>
+            <Link href="https://app.sonicsoal.com" passHref>
               <Button
                 className="w-full bg-primary hover:bg-primary/90 transition-all duration-300 relative overflow-hidden group shadow-md hover:shadow-lg"
                 onClick={() => setIsMenuOpen(false)}
