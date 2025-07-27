@@ -4,6 +4,8 @@ import './globals.css';
 import { ThemeProvider } from 'next-themes';
 import { Toaster } from '@/components/ui/sonner';
 import ProgressLoader from '@/components/progress-loader';
+import { Analytics } from "@vercel/analytics/react";
+
 
 const geistSans = Geist({
   variable: '--font-geist-sans',
@@ -264,6 +266,7 @@ export default function RootLayout({
           <Toaster />
           <ProgressLoader>{children}</ProgressLoader>
         </ThemeProvider>
+        <Analytics />
       </body>
     </html>
   );
