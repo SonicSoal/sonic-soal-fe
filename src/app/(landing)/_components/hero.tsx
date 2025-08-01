@@ -114,7 +114,7 @@ export function Hero() {
               className="relative h-12 px-8 overflow-hidden rounded-full bg-gradient-to-r from-primary to-secondary font-medium shadow-xl hover:shadow-[0_8px_25px_-5px_rgba(20,217,196,0.3)] transition-all duration-300 border-0 group"
               asChild
             >
-              <Link href="/sign-in" passHref>
+              <Link href="https://app.sonicsoal.com" passHref>
                 <span className="absolute inset-0 w-full h-full bg-gradient-to-r from-primary to-secondary opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-md"></span>
                 <span className="absolute inset-0 w-full h-full bg-black opacity-0 group-hover:opacity-10 transition-opacity duration-300"></span>
                 <span className="relative flex items-center justify-center z-10">
