@@ -11,7 +11,7 @@ export function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl
   const method = request.method;
 
-  if (pathname === '/.well-known/xrp-ledger.toml') {
+  if (pathname.startsWith('/.well-known')) {
 
     if (method === 'OPTIONS') {
       return new NextResponse(null, {
@@ -31,5 +31,5 @@ export function middleware(request: NextRequest) {
 }
 
 export const config = {
-  matcher: ['/.well-known/xrp-ledger.toml'],
+  matcher: ['/.well-known'],
 }
