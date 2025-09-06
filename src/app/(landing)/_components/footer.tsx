@@ -126,7 +126,7 @@ export function Footer() {
             <ul className="space-y-2">
               <li>
                 <Link
-                  href="#"
+                  href="/terms"
                   className="text-muted-foreground hover:text-primary text-sm"
                 >
                   Terms of Service
@@ -134,26 +134,10 @@ export function Footer() {
               </li>
               <li>
                 <Link
-                  href="#"
+                  href="/privacy"
                   className="text-muted-foreground hover:text-primary text-sm"
                 >
                   Privacy Policy
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="#"
-                  className="text-muted-foreground hover:text-primary text-sm"
-                >
-                  Cookie Policy
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="#"
-                  className="text-muted-foreground hover:text-primary text-sm"
-                >
-                  Contact Us
                 </Link>
               </li>
             </ul>
